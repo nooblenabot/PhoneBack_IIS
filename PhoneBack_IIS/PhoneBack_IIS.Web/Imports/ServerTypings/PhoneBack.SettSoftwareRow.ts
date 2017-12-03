@@ -16,6 +16,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Setting';
         export const localTextPrefix = 'PhoneBack.SettSoftware';
+        export const lookupKey = 'PhoneBack.SettSoftware';
+
+        export function getLookup(): Q.Lookup<SettSoftwareRow> {
+            return Q.getLookup<SettSoftwareRow>('PhoneBack.SettSoftware');
+        }
 
         export namespace Fields {
             export declare const Id: string;

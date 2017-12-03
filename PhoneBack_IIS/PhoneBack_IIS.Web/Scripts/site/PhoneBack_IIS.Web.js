@@ -513,7 +513,7 @@ var PhoneBack_IIS;
         }(Serenity.PrefixedContext));
         ConsumerForm.formKey = 'PhoneBack.Consumer';
         PhoneBack.ConsumerForm = ConsumerForm;
-        [['IsMorale', function () { return Serenity.BooleanEditor; }], ['IsActive', function () { return Serenity.BooleanEditor; }], ['IsArchive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['CorporateName', function () { return Serenity.StringEditor; }], ['ConsumerName', function () { return Serenity.StringEditor; }], ['ConsumerStatus', function () { return Serenity.IntegerEditor; }], ['AlertStatusConsumer', function () { return Serenity.StringEditor; }], ['Adress1', function () { return Serenity.StringEditor; }], ['Adress2', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.IntegerEditor; }], ['Cedex', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }], ['Email1', function () { return Serenity.StringEditor; }], ['Caption', function () { return Serenity.StringEditor; }], ['InactiveDate', function () { return Serenity.DateEditor; }], ['ArchiveDate', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(ConsumerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IsMorale', function () { return Serenity.BooleanEditor; }], ['IsActive', function () { return Serenity.BooleanEditor; }], ['IsArchive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['CorporateName', function () { return Serenity.StringEditor; }], ['ConsumerName', function () { return Serenity.StringEditor; }], ['ConsumerStatus', function () { return Serenity.LookupEditor; }], ['AlertStatusConsumer', function () { return Serenity.StringEditor; }], ['Adress1', function () { return Serenity.StringEditor; }], ['Adress2', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.LookupEditor; }], ['Country', function () { return Serenity.LookupEditor; }], ['Cedex', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }], ['Email1', function () { return Serenity.StringEditor; }], ['Caption', function () { return Serenity.StringEditor; }], ['InactiveDate', function () { return Serenity.DateEditor; }], ['ArchiveDate', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(ConsumerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
 })(PhoneBack_IIS || (PhoneBack_IIS = {}));
 var PhoneBack_IIS;
@@ -525,6 +525,11 @@ var PhoneBack_IIS;
             ConsumerRow.idProperty = 'Id';
             ConsumerRow.nameProperty = 'CorporateName';
             ConsumerRow.localTextPrefix = 'PhoneBack.Consumer';
+            ConsumerRow.lookupKey = 'PhoneBack.Consumer';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.Consumer');
+            }
+            ConsumerRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = ConsumerRow.Fields || (ConsumerRow.Fields = {}));
@@ -552,36 +557,13 @@ var PhoneBack_IIS;
                 'Caption',
                 'InactiveDate',
                 'ArchiveDate',
-                'ConsumerStatusDefaultValue',
-                'ConsumerStatusIsActive',
-                'ConsumerStatusInsertDate',
-                'ConsumerStatusInsertUserId',
-                'ConsumerStatusUpdateDate',
-                'ConsumerStatusUpdateUserId',
                 'ConsumerStatusCaption',
-                'CityDefaultValue',
                 'CityIsActive',
-                'CityInsertDate',
-                'CityInsertUserId',
-                'CityUpdateDate',
-                'CityUpdateUserId',
-                'CityFrCodeInsee',
                 'CityCaption',
                 'City1',
                 'CityPostCode',
                 'CityCountry',
-                'CountryDefaultValue',
-                'CountryIsActive',
-                'CountryInsertDate',
-                'CountryInsertUserId',
-                'CountryUpdateDate',
-                'CountryUpdateUserId',
-                'CountryNameFrFr',
-                'CountryNameEnGb',
-                'CountryAlpha3',
-                'CountryAlpha2',
-                'CountryCodeUe',
-                'CountryIsOcode'
+                'CountryNameFrFr'
             ].forEach(function (x) { return Fields[x] = x; });
         })(ConsumerRow = PhoneBack.ConsumerRow || (PhoneBack.ConsumerRow = {}));
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
@@ -624,7 +606,7 @@ var PhoneBack_IIS;
         }(Serenity.PrefixedContext));
         PersonForm.formKey = 'PhoneBack.Person';
         PhoneBack.PersonForm = PersonForm;
-        [['IsActive', function () { return Serenity.BooleanEditor; }], ['IsArchive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['Surname', function () { return Serenity.StringEditor; }], ['Name', function () { return Serenity.StringEditor; }], ['MaidenName', function () { return Serenity.StringEditor; }], ['CorporateId', function () { return Serenity.StringEditor; }], ['Sexe', function () { return Serenity.IntegerEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }], ['Email1', function () { return Serenity.StringEditor; }], ['Caption', function () { return Serenity.StringEditor; }], ['InactiveDate', function () { return Serenity.DateEditor; }], ['ArchiveDate', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(PersonForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IsActive', function () { return Serenity.BooleanEditor; }], ['IsArchive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['Surname', function () { return Serenity.StringEditor; }], ['Name', function () { return Serenity.StringEditor; }], ['MaidenName', function () { return Serenity.StringEditor; }], ['CorporateId', function () { return Serenity.LookupEditor; }], ['Sexe', function () { return Serenity.IntegerEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }], ['Email1', function () { return Serenity.StringEditor; }], ['Caption', function () { return Serenity.StringEditor; }], ['InactiveDate', function () { return Serenity.DateEditor; }], ['ArchiveDate', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(PersonForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
 })(PhoneBack_IIS || (PhoneBack_IIS = {}));
 var PhoneBack_IIS;
@@ -636,6 +618,11 @@ var PhoneBack_IIS;
             PersonRow.idProperty = 'Id';
             PersonRow.nameProperty = 'Surname';
             PersonRow.localTextPrefix = 'PhoneBack.Person';
+            PersonRow.lookupKey = 'PhoneBack.Person';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.Person');
+            }
+            PersonRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = PersonRow.Fields || (PersonRow.Fields = {}));
@@ -734,6 +721,11 @@ var PhoneBack_IIS;
             SetBussdivRow.idProperty = 'Id';
             SetBussdivRow.nameProperty = 'Caption';
             SetBussdivRow.localTextPrefix = 'PhoneBack.SetBussdiv';
+            SetBussdivRow.lookupKey = 'PhoneBack.SetBussdiv';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.SetBussdiv');
+            }
+            SetBussdivRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetBussdivRow.Fields || (SetBussdivRow.Fields = {}));
@@ -800,6 +792,11 @@ var PhoneBack_IIS;
             SetCatgticketRow.idProperty = 'Id';
             SetCatgticketRow.nameProperty = 'Caption';
             SetCatgticketRow.localTextPrefix = 'PhoneBack.SetCatgticket';
+            SetCatgticketRow.lookupKey = 'PhoneBack.SetCatgticket';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.SetCatgticket');
+            }
+            SetCatgticketRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetCatgticketRow.Fields || (SetCatgticketRow.Fields = {}));
@@ -854,7 +851,7 @@ var PhoneBack_IIS;
         }(Serenity.PrefixedContext));
         SetCityForm.formKey = 'PhoneBack.SetCity';
         PhoneBack.SetCityForm = SetCityForm;
-        [['DefaultValue', function () { return Serenity.BooleanEditor; }], ['IsActive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['FrCodeInsee', function () { return Serenity.StringEditor; }], ['Caption', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['PostCode', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(SetCityForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['DefaultValue', function () { return Serenity.BooleanEditor; }], ['IsActive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['FrCodeInsee', function () { return Serenity.StringEditor; }], ['Caption', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['PostCode', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(SetCityForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
 })(PhoneBack_IIS || (PhoneBack_IIS = {}));
 var PhoneBack_IIS;
@@ -864,8 +861,13 @@ var PhoneBack_IIS;
         var SetCityRow;
         (function (SetCityRow) {
             SetCityRow.idProperty = 'Id';
-            SetCityRow.nameProperty = 'FrCodeInsee';
+            SetCityRow.nameProperty = 'Caption';
             SetCityRow.localTextPrefix = 'PhoneBack.SetCity';
+            SetCityRow.lookupKey = 'PhoneBack.City';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.City');
+            }
+            SetCityRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetCityRow.Fields || (SetCityRow.Fields = {}));
@@ -882,18 +884,7 @@ var PhoneBack_IIS;
                 'City',
                 'PostCode',
                 'Country',
-                'CountryDefaultValue',
-                'CountryIsActive',
-                'CountryInsertDate',
-                'CountryInsertUserId',
-                'CountryUpdateDate',
-                'CountryUpdateUserId',
-                'CountryNameFrFr',
-                'CountryNameEnGb',
-                'CountryAlpha3',
-                'CountryAlpha2',
-                'CountryCodeUe',
-                'CountryIsOcode'
+                'CountryNameFrFr'
             ].forEach(function (x) { return Fields[x] = x; });
         })(SetCityRow = PhoneBack.SetCityRow || (PhoneBack.SetCityRow = {}));
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
@@ -948,6 +939,11 @@ var PhoneBack_IIS;
             SetConsumerstatusRow.idProperty = 'Id';
             SetConsumerstatusRow.nameProperty = 'Caption';
             SetConsumerstatusRow.localTextPrefix = 'PhoneBack.SetConsumerstatus';
+            SetConsumerstatusRow.lookupKey = 'PhoneBack.SetConsumerstatus';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.SetConsumerstatus');
+            }
+            SetConsumerstatusRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetConsumerstatusRow.Fields || (SetConsumerstatusRow.Fields = {}));
@@ -1014,6 +1010,11 @@ var PhoneBack_IIS;
             SetCountryRow.idProperty = 'Id';
             SetCountryRow.nameProperty = 'NameFrFr';
             SetCountryRow.localTextPrefix = 'PhoneBack.SetCountry';
+            SetCountryRow.lookupKey = 'PhoneBack.Country';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.Country');
+            }
+            SetCountryRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetCountryRow.Fields || (SetCountryRow.Fields = {}));
@@ -1073,7 +1074,7 @@ var PhoneBack_IIS;
         }(Serenity.PrefixedContext));
         SetMycompanyForm.formKey = 'PhoneBack.SetMycompany';
         PhoneBack.SetMycompanyForm = SetMycompanyForm;
-        [['IsActive', function () { return Serenity.BooleanEditor; }], ['IsArchive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['Name', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }], ['Email1', function () { return Serenity.StringEditor; }], ['Adress', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.IntegerEditor; }], ['Cedex', function () { return Serenity.StringEditor; }], ['ArchiveDate', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(SetMycompanyForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IsActive', function () { return Serenity.BooleanEditor; }], ['IsArchive', function () { return Serenity.BooleanEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['Name', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }], ['Email1', function () { return Serenity.StringEditor; }], ['Adress', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.LookupEditor; }], ['Country', function () { return Serenity.LookupEditor; }], ['Cedex', function () { return Serenity.StringEditor; }], ['ArchiveDate', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(SetMycompanyForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
 })(PhoneBack_IIS || (PhoneBack_IIS = {}));
 var PhoneBack_IIS;
@@ -1085,6 +1086,11 @@ var PhoneBack_IIS;
             SetMycompanyRow.idProperty = 'Id';
             SetMycompanyRow.nameProperty = 'Name';
             SetMycompanyRow.localTextPrefix = 'PhoneBack.SetMycompany';
+            SetMycompanyRow.lookupKey = 'PhoneBack.Mycompany';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.Mycompany');
+            }
+            SetMycompanyRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetMycompanyRow.Fields || (SetMycompanyRow.Fields = {}));
@@ -1105,29 +1111,11 @@ var PhoneBack_IIS;
                 'Country',
                 'Cedex',
                 'ArchiveDate',
-                'CityDefaultValue',
-                'CityIsActive',
-                'CityInsertDate',
-                'CityInsertUserId',
-                'CityUpdateDate',
-                'CityUpdateUserId',
-                'CityFrCodeInsee',
                 'CityCaption',
                 'City1',
                 'CityPostCode',
                 'CityCountry',
-                'CountryDefaultValue',
-                'CountryIsActive',
-                'CountryInsertDate',
-                'CountryInsertUserId',
-                'CountryUpdateDate',
-                'CountryUpdateUserId',
-                'CountryNameFrFr',
-                'CountryNameEnGb',
-                'CountryAlpha3',
-                'CountryAlpha2',
-                'CountryCodeUe',
-                'CountryIsOcode'
+                'CountryNameFrFr'
             ].forEach(function (x) { return Fields[x] = x; });
         })(SetMycompanyRow = PhoneBack.SetMycompanyRow || (PhoneBack.SetMycompanyRow = {}));
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
@@ -1182,6 +1170,11 @@ var PhoneBack_IIS;
             SetPriorityticketRow.idProperty = 'Id';
             SetPriorityticketRow.nameProperty = 'Caption';
             SetPriorityticketRow.localTextPrefix = 'PhoneBack.SetPriorityticket';
+            SetPriorityticketRow.lookupKey = 'PhoneBack.SetPriorityticket';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.SetPriorityticket');
+            }
+            SetPriorityticketRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetPriorityticketRow.Fields || (SetPriorityticketRow.Fields = {}));
@@ -1249,6 +1242,11 @@ var PhoneBack_IIS;
             SetTicketstatusRow.idProperty = 'Id';
             SetTicketstatusRow.nameProperty = 'Caption';
             SetTicketstatusRow.localTextPrefix = 'PhoneBack.SetTicketstatus';
+            SetTicketstatusRow.lookupKey = 'PhoneBack.SetTicketstatus';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.SetTicketstatus');
+            }
+            SetTicketstatusRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SetTicketstatusRow.Fields || (SetTicketstatusRow.Fields = {}));
@@ -1315,6 +1313,11 @@ var PhoneBack_IIS;
             SettSoftwareRow.idProperty = 'Id';
             SettSoftwareRow.nameProperty = 'Setting';
             SettSoftwareRow.localTextPrefix = 'PhoneBack.SettSoftware';
+            SettSoftwareRow.lookupKey = 'PhoneBack.SettSoftware';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.SettSoftware');
+            }
+            SettSoftwareRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = SettSoftwareRow.Fields || (SettSoftwareRow.Fields = {}));
@@ -1383,6 +1386,11 @@ var PhoneBack_IIS;
             TicketCommentRow.idProperty = 'Id';
             TicketCommentRow.nameProperty = 'Comment';
             TicketCommentRow.localTextPrefix = 'PhoneBack.TicketComment';
+            TicketCommentRow.lookupKey = 'PhoneBack.TicketComment';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.TicketComment');
+            }
+            TicketCommentRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = TicketCommentRow.Fields || (TicketCommentRow.Fields = {}));
@@ -1392,20 +1400,7 @@ var PhoneBack_IIS;
                 'CreateDate',
                 'CreateUserId',
                 'IsPublic',
-                'Comment',
-                'TicketIdentityConsumer',
-                'TicketCreateDate',
-                'TicketCreateUserId',
-                'TicketUpdateDate',
-                'TicketUpdateUserId',
-                'TicketCloseDate',
-                'TicketCloseUserId',
-                'TicketStatus',
-                'TicketPriority',
-                'TicketCategory',
-                'TicketToUserId',
-                'TicketSubject',
-                'TicketObject'
+                'Comment'
             ].forEach(function (x) { return Fields[x] = x; });
         })(TicketCommentRow = PhoneBack.TicketCommentRow || (PhoneBack.TicketCommentRow = {}));
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
@@ -1448,7 +1443,7 @@ var PhoneBack_IIS;
         }(Serenity.PrefixedContext));
         TicketForm.formKey = 'PhoneBack.Ticket';
         PhoneBack.TicketForm = TicketForm;
-        [['IdentityConsumer', function () { return Serenity.StringEditor; }], ['CreateDate', function () { return Serenity.DateEditor; }], ['CreateUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['CloseDate', function () { return Serenity.DateEditor; }], ['CloseUserId', function () { return Serenity.IntegerEditor; }], ['Status', function () { return Serenity.IntegerEditor; }], ['Priority', function () { return Serenity.IntegerEditor; }], ['Category', function () { return Serenity.IntegerEditor; }], ['ToUserId', function () { return Serenity.IntegerEditor; }], ['Subject', function () { return Serenity.StringEditor; }], ['Object', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(TicketForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IdentityConsumer', function () { return Serenity.LookupEditor; }], ['CreateDate', function () { return Serenity.DateEditor; }], ['CreateUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['CloseDate', function () { return Serenity.DateEditor; }], ['CloseUserId', function () { return Serenity.IntegerEditor; }], ['Status', function () { return Serenity.LookupEditor; }], ['Priority', function () { return Serenity.LookupEditor; }], ['Category', function () { return Serenity.LookupEditor; }], ['ToUserId', function () { return Serenity.IntegerEditor; }], ['Subject', function () { return Serenity.StringEditor; }], ['Object', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(TicketForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
 })(PhoneBack_IIS || (PhoneBack_IIS = {}));
 var PhoneBack_IIS;
@@ -1460,6 +1455,11 @@ var PhoneBack_IIS;
             TicketRow.idProperty = 'Id';
             TicketRow.nameProperty = 'Subject';
             TicketRow.localTextPrefix = 'PhoneBack.Ticket';
+            TicketRow.lookupKey = 'PhoneBack.Ticket';
+            function getLookup() {
+                return Q.getLookup('PhoneBack.Ticket');
+            }
+            TicketRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = TicketRow.Fields || (TicketRow.Fields = {}));
@@ -1478,12 +1478,6 @@ var PhoneBack_IIS;
                 'ToUserId',
                 'Subject',
                 'Object',
-                'IdentityConsumerIsActive',
-                'IdentityConsumerIsArchive',
-                'IdentityConsumerInsertDate',
-                'IdentityConsumerInsertUserId',
-                'IdentityConsumerUpdateDate',
-                'IdentityConsumerUpdateUserId',
                 'IdentityConsumerSurname',
                 'IdentityConsumerName',
                 'IdentityConsumerMaidenName',
@@ -1493,47 +1487,12 @@ var PhoneBack_IIS;
                 'IdentityConsumerGsm',
                 'IdentityConsumerEmail1',
                 'IdentityConsumerCaption',
-                'IdentityConsumerInactiveDate',
-                'IdentityConsumerArchiveDate',
-                'StatusDefaultValue',
-                'StatusIsActive',
-                'StatusInsertDate',
-                'StatusInsertUserId',
-                'StatusUpdateDate',
-                'StatusUpdateUserId',
                 'StatusCaption',
-                'PriorityDefaultValue',
-                'PriorityIsActive',
-                'PriorityInsertDate',
-                'PriorityInsertUserId',
-                'PriorityUpdateDate',
-                'PriorityUpdateUserId',
                 'PriorityCaption',
                 'PriorityColor',
-                'CategoryDefaultValue',
-                'CategoryIsActive',
-                'CategoryInsertDate',
-                'CategoryInsertUserId',
-                'CategoryUpdateDate',
-                'CategoryUpdateUserId',
                 'CategoryCaption',
                 'ToUserUsername',
-                'ToUserDisplayName',
-                'ToUserEmail',
-                'ToUserSource',
-                'ToUserPasswordHash',
-                'ToUserPasswordSalt',
-                'ToUserLastDirectoryUpdate',
-                'ToUserUserImage',
-                'ToUserInsertDate',
-                'ToUserInsertUserId',
-                'ToUserUpdateDate',
-                'ToUserUpdateUserId',
-                'ToUserIsActive',
-                'ToUserMyCompanyId',
-                'ToUserBusinessDivision',
-                'ToUserPhone',
-                'ToUserGsm'
+                'ToUserDisplayName'
             ].forEach(function (x) { return Fields[x] = x; });
         })(TicketRow = PhoneBack.TicketRow || (PhoneBack.TicketRow = {}));
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
@@ -1576,7 +1535,7 @@ var PhoneBack_IIS;
         }(Serenity.PrefixedContext));
         UsersForm.formKey = 'PhoneBack.Users';
         PhoneBack.UsersForm = UsersForm;
-        [['Username', function () { return Serenity.StringEditor; }], ['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.StringEditor; }], ['Source', function () { return Serenity.StringEditor; }], ['PasswordHash', function () { return Serenity.StringEditor; }], ['PasswordSalt', function () { return Serenity.StringEditor; }], ['LastDirectoryUpdate', function () { return Serenity.DateEditor; }], ['UserImage', function () { return Serenity.StringEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['IsActive', function () { return Serenity.IntegerEditor; }], ['MyCompanyId', function () { return Serenity.IntegerEditor; }], ['BusinessDivision', function () { return Serenity.IntegerEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(UsersForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Username', function () { return Serenity.StringEditor; }], ['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.StringEditor; }], ['Source', function () { return Serenity.StringEditor; }], ['PasswordHash', function () { return Serenity.StringEditor; }], ['PasswordSalt', function () { return Serenity.StringEditor; }], ['LastDirectoryUpdate', function () { return Serenity.DateEditor; }], ['UserImage', function () { return Serenity.StringEditor; }], ['InsertDate', function () { return Serenity.DateEditor; }], ['InsertUserId', function () { return Serenity.IntegerEditor; }], ['UpdateDate', function () { return Serenity.DateEditor; }], ['UpdateUserId', function () { return Serenity.IntegerEditor; }], ['IsActive', function () { return Serenity.IntegerEditor; }], ['MyCompanyId', function () { return Serenity.LookupEditor; }], ['BusinessDivision', function () { return Serenity.LookupEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Gsm', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(UsersForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(PhoneBack = PhoneBack_IIS.PhoneBack || (PhoneBack_IIS.PhoneBack = {}));
 })(PhoneBack_IIS || (PhoneBack_IIS = {}));
 var PhoneBack_IIS;

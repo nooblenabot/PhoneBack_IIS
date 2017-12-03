@@ -532,12 +532,12 @@ declare namespace PhoneBack_IIS.PhoneBack {
         UpdateUserId: Serenity.IntegerEditor;
         CorporateName: Serenity.StringEditor;
         ConsumerName: Serenity.StringEditor;
-        ConsumerStatus: Serenity.IntegerEditor;
+        ConsumerStatus: Serenity.LookupEditor;
         AlertStatusConsumer: Serenity.StringEditor;
         Adress1: Serenity.StringEditor;
         Adress2: Serenity.StringEditor;
-        City: Serenity.StringEditor;
-        Country: Serenity.IntegerEditor;
+        City: Serenity.LookupEditor;
+        Country: Serenity.LookupEditor;
         Cedex: Serenity.StringEditor;
         Phone: Serenity.StringEditor;
         Gsm: Serenity.StringEditor;
@@ -572,41 +572,20 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Caption?: string;
         InactiveDate?: string;
         ArchiveDate?: string;
-        ConsumerStatusDefaultValue?: boolean;
-        ConsumerStatusIsActive?: boolean;
-        ConsumerStatusInsertDate?: string;
-        ConsumerStatusInsertUserId?: number;
-        ConsumerStatusUpdateDate?: string;
-        ConsumerStatusUpdateUserId?: number;
         ConsumerStatusCaption?: string;
-        CityDefaultValue?: boolean;
         CityIsActive?: boolean;
-        CityInsertDate?: string;
-        CityInsertUserId?: number;
-        CityUpdateDate?: string;
-        CityUpdateUserId?: number;
-        CityFrCodeInsee?: string;
         CityCaption?: string;
         City1?: string;
         CityPostCode?: string;
         CityCountry?: number;
-        CountryDefaultValue?: boolean;
-        CountryIsActive?: boolean;
-        CountryInsertDate?: string;
-        CountryInsertUserId?: number;
-        CountryUpdateDate?: string;
-        CountryUpdateUserId?: number;
         CountryNameFrFr?: string;
-        CountryNameEnGb?: string;
-        CountryAlpha3?: string;
-        CountryAlpha2?: string;
-        CountryCodeUe?: number;
-        CountryIsOcode?: string;
     }
     namespace ConsumerRow {
         const idProperty = "Id";
         const nameProperty = "CorporateName";
         const localTextPrefix = "PhoneBack.Consumer";
+        const lookupKey = "PhoneBack.Consumer";
+        function getLookup(): Q.Lookup<ConsumerRow>;
         namespace Fields {
             const Id: string;
             const IsMorale: string;
@@ -631,36 +610,13 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const Caption: string;
             const InactiveDate: string;
             const ArchiveDate: string;
-            const ConsumerStatusDefaultValue: string;
-            const ConsumerStatusIsActive: string;
-            const ConsumerStatusInsertDate: string;
-            const ConsumerStatusInsertUserId: string;
-            const ConsumerStatusUpdateDate: string;
-            const ConsumerStatusUpdateUserId: string;
             const ConsumerStatusCaption: string;
-            const CityDefaultValue: string;
             const CityIsActive: string;
-            const CityInsertDate: string;
-            const CityInsertUserId: string;
-            const CityUpdateDate: string;
-            const CityUpdateUserId: string;
-            const CityFrCodeInsee: string;
             const CityCaption: string;
             const City1: string;
             const CityPostCode: string;
             const CityCountry: string;
-            const CountryDefaultValue: string;
-            const CountryIsActive: string;
-            const CountryInsertDate: string;
-            const CountryInsertUserId: string;
-            const CountryUpdateDate: string;
-            const CountryUpdateUserId: string;
             const CountryNameFrFr: string;
-            const CountryNameEnGb: string;
-            const CountryAlpha3: string;
-            const CountryAlpha2: string;
-            const CountryCodeUe: string;
-            const CountryIsOcode: string;
         }
     }
 }
@@ -697,7 +653,7 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Surname: Serenity.StringEditor;
         Name: Serenity.StringEditor;
         MaidenName: Serenity.StringEditor;
-        CorporateId: Serenity.StringEditor;
+        CorporateId: Serenity.LookupEditor;
         Sexe: Serenity.IntegerEditor;
         Phone: Serenity.StringEditor;
         Gsm: Serenity.StringEditor;
@@ -754,6 +710,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "Surname";
         const localTextPrefix = "PhoneBack.Person";
+        const lookupKey = "PhoneBack.Person";
+        function getLookup(): Q.Lookup<PersonRow>;
         namespace Fields {
             const Id: string;
             const IsActive: string;
@@ -846,6 +804,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "Caption";
         const localTextPrefix = "PhoneBack.SetBussdiv";
+        const lookupKey = "PhoneBack.SetBussdiv";
+        function getLookup(): Q.Lookup<SetBussdivRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -906,6 +866,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "Caption";
         const localTextPrefix = "PhoneBack.SetCatgticket";
+        const lookupKey = "PhoneBack.SetCatgticket";
+        function getLookup(): Q.Lookup<SetCatgticketRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -952,7 +914,7 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Caption: Serenity.StringEditor;
         City: Serenity.StringEditor;
         PostCode: Serenity.StringEditor;
-        Country: Serenity.IntegerEditor;
+        Country: Serenity.LookupEditor;
     }
 }
 declare namespace PhoneBack_IIS.PhoneBack {
@@ -969,23 +931,14 @@ declare namespace PhoneBack_IIS.PhoneBack {
         City?: string;
         PostCode?: string;
         Country?: number;
-        CountryDefaultValue?: boolean;
-        CountryIsActive?: boolean;
-        CountryInsertDate?: string;
-        CountryInsertUserId?: number;
-        CountryUpdateDate?: string;
-        CountryUpdateUserId?: number;
         CountryNameFrFr?: string;
-        CountryNameEnGb?: string;
-        CountryAlpha3?: string;
-        CountryAlpha2?: string;
-        CountryCodeUe?: number;
-        CountryIsOcode?: string;
     }
     namespace SetCityRow {
         const idProperty = "Id";
-        const nameProperty = "FrCodeInsee";
+        const nameProperty = "Caption";
         const localTextPrefix = "PhoneBack.SetCity";
+        const lookupKey = "PhoneBack.City";
+        function getLookup(): Q.Lookup<SetCityRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -999,18 +952,7 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const City: string;
             const PostCode: string;
             const Country: string;
-            const CountryDefaultValue: string;
-            const CountryIsActive: string;
-            const CountryInsertDate: string;
-            const CountryInsertUserId: string;
-            const CountryUpdateDate: string;
-            const CountryUpdateUserId: string;
             const CountryNameFrFr: string;
-            const CountryNameEnGb: string;
-            const CountryAlpha3: string;
-            const CountryAlpha2: string;
-            const CountryCodeUe: string;
-            const CountryIsOcode: string;
         }
     }
 }
@@ -1062,6 +1004,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "Caption";
         const localTextPrefix = "PhoneBack.SetConsumerstatus";
+        const lookupKey = "PhoneBack.SetConsumerstatus";
+        function getLookup(): Q.Lookup<SetConsumerstatusRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -1132,6 +1076,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "NameFrFr";
         const localTextPrefix = "PhoneBack.SetCountry";
+        const lookupKey = "PhoneBack.Country";
+        function getLookup(): Q.Lookup<SetCountryRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -1184,8 +1130,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Gsm: Serenity.StringEditor;
         Email1: Serenity.StringEditor;
         Adress: Serenity.StringEditor;
-        City: Serenity.StringEditor;
-        Country: Serenity.IntegerEditor;
+        City: Serenity.LookupEditor;
+        Country: Serenity.LookupEditor;
         Cedex: Serenity.StringEditor;
         ArchiveDate: Serenity.DateEditor;
     }
@@ -1208,34 +1154,18 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Country?: number;
         Cedex?: string;
         ArchiveDate?: string;
-        CityDefaultValue?: boolean;
-        CityIsActive?: boolean;
-        CityInsertDate?: string;
-        CityInsertUserId?: number;
-        CityUpdateDate?: string;
-        CityUpdateUserId?: number;
-        CityFrCodeInsee?: string;
         CityCaption?: string;
         City1?: string;
         CityPostCode?: string;
         CityCountry?: number;
-        CountryDefaultValue?: boolean;
-        CountryIsActive?: boolean;
-        CountryInsertDate?: string;
-        CountryInsertUserId?: number;
-        CountryUpdateDate?: string;
-        CountryUpdateUserId?: number;
         CountryNameFrFr?: string;
-        CountryNameEnGb?: string;
-        CountryAlpha3?: string;
-        CountryAlpha2?: string;
-        CountryCodeUe?: number;
-        CountryIsOcode?: string;
     }
     namespace SetMycompanyRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "PhoneBack.SetMycompany";
+        const lookupKey = "PhoneBack.Mycompany";
+        function getLookup(): Q.Lookup<SetMycompanyRow>;
         namespace Fields {
             const Id: string;
             const IsActive: string;
@@ -1253,29 +1183,11 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const Country: string;
             const Cedex: string;
             const ArchiveDate: string;
-            const CityDefaultValue: string;
-            const CityIsActive: string;
-            const CityInsertDate: string;
-            const CityInsertUserId: string;
-            const CityUpdateDate: string;
-            const CityUpdateUserId: string;
-            const CityFrCodeInsee: string;
             const CityCaption: string;
             const City1: string;
             const CityPostCode: string;
             const CityCountry: string;
-            const CountryDefaultValue: string;
-            const CountryIsActive: string;
-            const CountryInsertDate: string;
-            const CountryInsertUserId: string;
-            const CountryUpdateDate: string;
-            const CountryUpdateUserId: string;
             const CountryNameFrFr: string;
-            const CountryNameEnGb: string;
-            const CountryAlpha3: string;
-            const CountryAlpha2: string;
-            const CountryCodeUe: string;
-            const CountryIsOcode: string;
         }
     }
 }
@@ -1329,6 +1241,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "Caption";
         const localTextPrefix = "PhoneBack.SetPriorityticket";
+        const lookupKey = "PhoneBack.SetPriorityticket";
+        function getLookup(): Q.Lookup<SetPriorityticketRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -1390,6 +1304,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "Caption";
         const localTextPrefix = "PhoneBack.SetTicketstatus";
+        const lookupKey = "PhoneBack.SetTicketstatus";
+        function getLookup(): Q.Lookup<SetTicketstatusRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -1454,6 +1370,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         const idProperty = "Id";
         const nameProperty = "Setting";
         const localTextPrefix = "PhoneBack.SettSoftware";
+        const lookupKey = "PhoneBack.SettSoftware";
+        function getLookup(): Q.Lookup<SettSoftwareRow>;
         namespace Fields {
             const Id: string;
             const DefaultValue: string;
@@ -1509,24 +1427,13 @@ declare namespace PhoneBack_IIS.PhoneBack {
         CreateUserId?: number;
         IsPublic?: boolean;
         Comment?: string;
-        TicketIdentityConsumer?: number;
-        TicketCreateDate?: string;
-        TicketCreateUserId?: number;
-        TicketUpdateDate?: string;
-        TicketUpdateUserId?: number;
-        TicketCloseDate?: string;
-        TicketCloseUserId?: number;
-        TicketStatus?: number;
-        TicketPriority?: number;
-        TicketCategory?: number;
-        TicketToUserId?: number;
-        TicketSubject?: string;
-        TicketObject?: string;
     }
     namespace TicketCommentRow {
         const idProperty = "Id";
         const nameProperty = "Comment";
         const localTextPrefix = "PhoneBack.TicketComment";
+        const lookupKey = "PhoneBack.TicketComment";
+        function getLookup(): Q.Lookup<TicketCommentRow>;
         namespace Fields {
             const Id: string;
             const TicketId: string;
@@ -1534,19 +1441,6 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const CreateUserId: string;
             const IsPublic: string;
             const Comment: string;
-            const TicketIdentityConsumer: string;
-            const TicketCreateDate: string;
-            const TicketCreateUserId: string;
-            const TicketUpdateDate: string;
-            const TicketUpdateUserId: string;
-            const TicketCloseDate: string;
-            const TicketCloseUserId: string;
-            const TicketStatus: string;
-            const TicketPriority: string;
-            const TicketCategory: string;
-            const TicketToUserId: string;
-            const TicketSubject: string;
-            const TicketObject: string;
         }
     }
 }
@@ -1572,16 +1466,16 @@ declare namespace PhoneBack_IIS.PhoneBack {
         static formKey: string;
     }
     interface TicketForm {
-        IdentityConsumer: Serenity.StringEditor;
+        IdentityConsumer: Serenity.LookupEditor;
         CreateDate: Serenity.DateEditor;
         CreateUserId: Serenity.IntegerEditor;
         UpdateDate: Serenity.DateEditor;
         UpdateUserId: Serenity.IntegerEditor;
         CloseDate: Serenity.DateEditor;
         CloseUserId: Serenity.IntegerEditor;
-        Status: Serenity.IntegerEditor;
-        Priority: Serenity.IntegerEditor;
-        Category: Serenity.IntegerEditor;
+        Status: Serenity.LookupEditor;
+        Priority: Serenity.LookupEditor;
+        Category: Serenity.LookupEditor;
         ToUserId: Serenity.IntegerEditor;
         Subject: Serenity.StringEditor;
         Object: Serenity.StringEditor;
@@ -1603,12 +1497,6 @@ declare namespace PhoneBack_IIS.PhoneBack {
         ToUserId?: number;
         Subject?: string;
         Object?: string;
-        IdentityConsumerIsActive?: boolean;
-        IdentityConsumerIsArchive?: boolean;
-        IdentityConsumerInsertDate?: string;
-        IdentityConsumerInsertUserId?: number;
-        IdentityConsumerUpdateDate?: string;
-        IdentityConsumerUpdateUserId?: number;
         IdentityConsumerSurname?: string;
         IdentityConsumerName?: string;
         IdentityConsumerMaidenName?: string;
@@ -1618,52 +1506,19 @@ declare namespace PhoneBack_IIS.PhoneBack {
         IdentityConsumerGsm?: string;
         IdentityConsumerEmail1?: string;
         IdentityConsumerCaption?: string;
-        IdentityConsumerInactiveDate?: string;
-        IdentityConsumerArchiveDate?: string;
-        StatusDefaultValue?: boolean;
-        StatusIsActive?: boolean;
-        StatusInsertDate?: string;
-        StatusInsertUserId?: number;
-        StatusUpdateDate?: string;
-        StatusUpdateUserId?: number;
         StatusCaption?: string;
-        PriorityDefaultValue?: boolean;
-        PriorityIsActive?: boolean;
-        PriorityInsertDate?: string;
-        PriorityInsertUserId?: number;
-        PriorityUpdateDate?: string;
-        PriorityUpdateUserId?: number;
         PriorityCaption?: string;
         PriorityColor?: string;
-        CategoryDefaultValue?: boolean;
-        CategoryIsActive?: boolean;
-        CategoryInsertDate?: string;
-        CategoryInsertUserId?: number;
-        CategoryUpdateDate?: string;
-        CategoryUpdateUserId?: number;
         CategoryCaption?: string;
         ToUserUsername?: string;
         ToUserDisplayName?: string;
-        ToUserEmail?: string;
-        ToUserSource?: string;
-        ToUserPasswordHash?: string;
-        ToUserPasswordSalt?: string;
-        ToUserLastDirectoryUpdate?: string;
-        ToUserUserImage?: string;
-        ToUserInsertDate?: string;
-        ToUserInsertUserId?: number;
-        ToUserUpdateDate?: string;
-        ToUserUpdateUserId?: number;
-        ToUserIsActive?: number;
-        ToUserMyCompanyId?: number;
-        ToUserBusinessDivision?: number;
-        ToUserPhone?: string;
-        ToUserGsm?: string;
     }
     namespace TicketRow {
         const idProperty = "Id";
         const nameProperty = "Subject";
         const localTextPrefix = "PhoneBack.Ticket";
+        const lookupKey = "PhoneBack.Ticket";
+        function getLookup(): Q.Lookup<TicketRow>;
         namespace Fields {
             const Id: string;
             const IdentityConsumer: string;
@@ -1679,12 +1534,6 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const ToUserId: string;
             const Subject: string;
             const Object: string;
-            const IdentityConsumerIsActive: string;
-            const IdentityConsumerIsArchive: string;
-            const IdentityConsumerInsertDate: string;
-            const IdentityConsumerInsertUserId: string;
-            const IdentityConsumerUpdateDate: string;
-            const IdentityConsumerUpdateUserId: string;
             const IdentityConsumerSurname: string;
             const IdentityConsumerName: string;
             const IdentityConsumerMaidenName: string;
@@ -1694,47 +1543,12 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const IdentityConsumerGsm: string;
             const IdentityConsumerEmail1: string;
             const IdentityConsumerCaption: string;
-            const IdentityConsumerInactiveDate: string;
-            const IdentityConsumerArchiveDate: string;
-            const StatusDefaultValue: string;
-            const StatusIsActive: string;
-            const StatusInsertDate: string;
-            const StatusInsertUserId: string;
-            const StatusUpdateDate: string;
-            const StatusUpdateUserId: string;
             const StatusCaption: string;
-            const PriorityDefaultValue: string;
-            const PriorityIsActive: string;
-            const PriorityInsertDate: string;
-            const PriorityInsertUserId: string;
-            const PriorityUpdateDate: string;
-            const PriorityUpdateUserId: string;
             const PriorityCaption: string;
             const PriorityColor: string;
-            const CategoryDefaultValue: string;
-            const CategoryIsActive: string;
-            const CategoryInsertDate: string;
-            const CategoryInsertUserId: string;
-            const CategoryUpdateDate: string;
-            const CategoryUpdateUserId: string;
             const CategoryCaption: string;
             const ToUserUsername: string;
             const ToUserDisplayName: string;
-            const ToUserEmail: string;
-            const ToUserSource: string;
-            const ToUserPasswordHash: string;
-            const ToUserPasswordSalt: string;
-            const ToUserLastDirectoryUpdate: string;
-            const ToUserUserImage: string;
-            const ToUserInsertDate: string;
-            const ToUserInsertUserId: string;
-            const ToUserUpdateDate: string;
-            const ToUserUpdateUserId: string;
-            const ToUserIsActive: string;
-            const ToUserMyCompanyId: string;
-            const ToUserBusinessDivision: string;
-            const ToUserPhone: string;
-            const ToUserGsm: string;
         }
     }
 }
@@ -1775,8 +1589,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         UpdateDate: Serenity.DateEditor;
         UpdateUserId: Serenity.IntegerEditor;
         IsActive: Serenity.IntegerEditor;
-        MyCompanyId: Serenity.IntegerEditor;
-        BusinessDivision: Serenity.IntegerEditor;
+        MyCompanyId: Serenity.LookupEditor;
+        BusinessDivision: Serenity.LookupEditor;
         Phone: Serenity.StringEditor;
         Gsm: Serenity.StringEditor;
     }

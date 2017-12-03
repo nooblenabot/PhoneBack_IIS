@@ -12,24 +12,18 @@
         City?: string;
         PostCode?: string;
         Country?: number;
-        CountryDefaultValue?: boolean;
-        CountryIsActive?: boolean;
-        CountryInsertDate?: string;
-        CountryInsertUserId?: number;
-        CountryUpdateDate?: string;
-        CountryUpdateUserId?: number;
         CountryNameFrFr?: string;
-        CountryNameEnGb?: string;
-        CountryAlpha3?: string;
-        CountryAlpha2?: string;
-        CountryCodeUe?: number;
-        CountryIsOcode?: string;
     }
 
     export namespace SetCityRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'FrCodeInsee';
+        export const nameProperty = 'Caption';
         export const localTextPrefix = 'PhoneBack.SetCity';
+        export const lookupKey = 'PhoneBack.City';
+
+        export function getLookup(): Q.Lookup<SetCityRow> {
+            return Q.getLookup<SetCityRow>('PhoneBack.City');
+        }
 
         export namespace Fields {
             export declare const Id: string;
@@ -44,18 +38,7 @@
             export declare const City: string;
             export declare const PostCode: string;
             export declare const Country: string;
-            export declare const CountryDefaultValue: string;
-            export declare const CountryIsActive: string;
-            export declare const CountryInsertDate: string;
-            export declare const CountryInsertUserId: string;
-            export declare const CountryUpdateDate: string;
-            export declare const CountryUpdateUserId: string;
             export declare const CountryNameFrFr: string;
-            export declare const CountryNameEnGb: string;
-            export declare const CountryAlpha3: string;
-            export declare const CountryAlpha2: string;
-            export declare const CountryCodeUe: string;
-            export declare const CountryIsOcode: string;
         }
 
         [
@@ -71,18 +54,7 @@
             'City', 
             'PostCode', 
             'Country', 
-            'CountryDefaultValue', 
-            'CountryIsActive', 
-            'CountryInsertDate', 
-            'CountryInsertUserId', 
-            'CountryUpdateDate', 
-            'CountryUpdateUserId', 
-            'CountryNameFrFr', 
-            'CountryNameEnGb', 
-            'CountryAlpha3', 
-            'CountryAlpha2', 
-            'CountryCodeUe', 
-            'CountryIsOcode'
+            'CountryNameFrFr'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

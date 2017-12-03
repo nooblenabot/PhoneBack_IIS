@@ -13,6 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Person"), InstanceName("Person"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("PhoneBack.Person")]
     public sealed class PersonRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
@@ -86,6 +87,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Corporate"), ForeignKey("[dbo].[CONSUMER]", "Id"), LeftJoin("jCorporate"), TextualField("CorporateCorporateName")]
+        [LookupEditor(typeof(ConsumerRow), MinimumResultsForSearch = -1, InplaceAdd = false)]
         public Int64? CorporateId
         {
             get { return Fields.CorporateId[this]; }

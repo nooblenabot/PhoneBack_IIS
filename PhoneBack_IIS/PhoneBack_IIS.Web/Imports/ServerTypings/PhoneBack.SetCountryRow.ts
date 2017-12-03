@@ -19,6 +19,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'NameFrFr';
         export const localTextPrefix = 'PhoneBack.SetCountry';
+        export const lookupKey = 'PhoneBack.Country';
+
+        export function getLookup(): Q.Lookup<SetCountryRow> {
+            return Q.getLookup<SetCountryRow>('PhoneBack.Country');
+        }
 
         export namespace Fields {
             export declare const Id: string;

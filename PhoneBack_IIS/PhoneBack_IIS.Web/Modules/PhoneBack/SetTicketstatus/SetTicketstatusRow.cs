@@ -13,6 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Ticketstatus"), InstanceName("Set Ticketstatus"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("PhoneBack.SetTicketstatus")]
     public sealed class SetTicketstatusRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

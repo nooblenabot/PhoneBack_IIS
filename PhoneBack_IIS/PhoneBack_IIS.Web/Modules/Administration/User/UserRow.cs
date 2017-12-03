@@ -11,6 +11,7 @@ namespace PhoneBack_IIS.Administration.Entities
     [ReadPermission(PermissionKeys.Security)]
     [ModifyPermission(PermissionKeys.Security)]
     [LookupScript("Administration.User", Permission = PermissionKeys.Security)]
+    //[LookupScript("PhoneBack.User")]
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
         [DisplayName("User Id"), Identity]

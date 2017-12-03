@@ -46,6 +46,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Surname';
         export const localTextPrefix = 'PhoneBack.Person';
+        export const lookupKey = 'PhoneBack.Person';
+
+        export function getLookup(): Q.Lookup<PersonRow> {
+            return Q.getLookup<PersonRow>('PhoneBack.Person');
+        }
 
         export namespace Fields {
             export declare const Id: string;

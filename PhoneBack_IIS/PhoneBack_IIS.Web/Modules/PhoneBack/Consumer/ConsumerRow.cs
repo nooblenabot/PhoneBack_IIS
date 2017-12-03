@@ -13,6 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Consumer"), InstanceName("Consumer"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("PhoneBack.Consumer")]
     public sealed class ConsumerRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
@@ -86,6 +87,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Consumer Status"), ForeignKey("[dbo].[SET_CONSUMERSTATUS]", "Id"), LeftJoin("jConsumerStatus"), TextualField("ConsumerStatusCaption")]
+        [LookupEditor(typeof(SetConsumerstatusRow), MinimumResultsForSearch = -1, InplaceAdd = false)]
         public Int16? ConsumerStatus
         {
             get { return Fields.ConsumerStatus[this]; }
@@ -113,7 +115,8 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.Adress2[this] = value; }
         }
 
-        [DisplayName("City"), ForeignKey("[dbo].[SET_CITY]", "Id"), LeftJoin("jCity"), TextualField("CityFrCodeInsee")]
+        [DisplayName("City"), ForeignKey("[dbo].[SET_CITY]", "Id"), LeftJoin("jCity"), TextualField("CityCaption")]
+        [LookupEditor(typeof(SetCityRow), MinimumResultsForSearch = 1, InplaceAdd = false)]
         public Int64? City
         {
             get { return Fields.City[this]; }
@@ -121,6 +124,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Country"), ForeignKey("[dbo].[SET_COUNTRY]", "Id"), LeftJoin("jCountry"), TextualField("CountryNameFrFr")]
+        [LookupEditor(typeof(SetCountryRow), MinimumResultsForSearch = -1, InplaceAdd = false)]
         public Int16? Country
         {
             get { return Fields.Country[this]; }
@@ -176,48 +180,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.ArchiveDate[this] = value; }
         }
 
-        [DisplayName("Consumer Status Default Value"), Expression("jConsumerStatus.[DefaultValue]")]
-        public Boolean? ConsumerStatusDefaultValue
-        {
-            get { return Fields.ConsumerStatusDefaultValue[this]; }
-            set { Fields.ConsumerStatusDefaultValue[this] = value; }
-        }
-
-        [DisplayName("Consumer Status Is Active"), Expression("jConsumerStatus.[IsActive]")]
-        public Boolean? ConsumerStatusIsActive
-        {
-            get { return Fields.ConsumerStatusIsActive[this]; }
-            set { Fields.ConsumerStatusIsActive[this] = value; }
-        }
-
-        [DisplayName("Consumer Status Insert Date"), Expression("jConsumerStatus.[InsertDate]")]
-        public DateTime? ConsumerStatusInsertDate
-        {
-            get { return Fields.ConsumerStatusInsertDate[this]; }
-            set { Fields.ConsumerStatusInsertDate[this] = value; }
-        }
-
-        [DisplayName("Consumer Status Insert User Id"), Expression("jConsumerStatus.[InsertUserId]")]
-        public Int32? ConsumerStatusInsertUserId
-        {
-            get { return Fields.ConsumerStatusInsertUserId[this]; }
-            set { Fields.ConsumerStatusInsertUserId[this] = value; }
-        }
-
-        [DisplayName("Consumer Status Update Date"), Expression("jConsumerStatus.[UpdateDate]")]
-        public DateTime? ConsumerStatusUpdateDate
-        {
-            get { return Fields.ConsumerStatusUpdateDate[this]; }
-            set { Fields.ConsumerStatusUpdateDate[this] = value; }
-        }
-
-        [DisplayName("Consumer Status Update User Id"), Expression("jConsumerStatus.[UpdateUserId]")]
-        public Int32? ConsumerStatusUpdateUserId
-        {
-            get { return Fields.ConsumerStatusUpdateUserId[this]; }
-            set { Fields.ConsumerStatusUpdateUserId[this] = value; }
-        }
-
+        
         [DisplayName("Consumer Status Caption"), Expression("jConsumerStatus.[Caption]")]
         public String ConsumerStatusCaption
         {
@@ -225,55 +188,13 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.ConsumerStatusCaption[this] = value; }
         }
 
-        [DisplayName("City Default Value"), Expression("jCity.[DefaultValue]")]
-        public Boolean? CityDefaultValue
-        {
-            get { return Fields.CityDefaultValue[this]; }
-            set { Fields.CityDefaultValue[this] = value; }
-        }
-
-        [DisplayName("City Is Active"), Expression("jCity.[IsActive]")]
+       [DisplayName("City Is Active"), Expression("jCity.[IsActive]")]
         public Boolean? CityIsActive
         {
             get { return Fields.CityIsActive[this]; }
             set { Fields.CityIsActive[this] = value; }
         }
-
-        [DisplayName("City Insert Date"), Expression("jCity.[InsertDate]")]
-        public DateTime? CityInsertDate
-        {
-            get { return Fields.CityInsertDate[this]; }
-            set { Fields.CityInsertDate[this] = value; }
-        }
-
-        [DisplayName("City Insert User Id"), Expression("jCity.[InsertUserId]")]
-        public Int32? CityInsertUserId
-        {
-            get { return Fields.CityInsertUserId[this]; }
-            set { Fields.CityInsertUserId[this] = value; }
-        }
-
-        [DisplayName("City Update Date"), Expression("jCity.[UpdateDate]")]
-        public DateTime? CityUpdateDate
-        {
-            get { return Fields.CityUpdateDate[this]; }
-            set { Fields.CityUpdateDate[this] = value; }
-        }
-
-        [DisplayName("City Update User Id"), Expression("jCity.[UpdateUserId]")]
-        public Int32? CityUpdateUserId
-        {
-            get { return Fields.CityUpdateUserId[this]; }
-            set { Fields.CityUpdateUserId[this] = value; }
-        }
-
-        [DisplayName("City Fr Code Insee"), Expression("jCity.[FRCodeINSEE]")]
-        public String CityFrCodeInsee
-        {
-            get { return Fields.CityFrCodeInsee[this]; }
-            set { Fields.CityFrCodeInsee[this] = value; }
-        }
-
+        
         [DisplayName("City Caption"), Expression("jCity.[Caption]")]
         public String CityCaption
         {
@@ -302,90 +223,13 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.CityCountry[this] = value; }
         }
 
-        [DisplayName("Country Default Value"), Expression("jCountry.[DefaultValue]")]
-        public Boolean? CountryDefaultValue
-        {
-            get { return Fields.CountryDefaultValue[this]; }
-            set { Fields.CountryDefaultValue[this] = value; }
-        }
-
-        [DisplayName("Country Is Active"), Expression("jCountry.[IsActive]")]
-        public Boolean? CountryIsActive
-        {
-            get { return Fields.CountryIsActive[this]; }
-            set { Fields.CountryIsActive[this] = value; }
-        }
-
-        [DisplayName("Country Insert Date"), Expression("jCountry.[InsertDate]")]
-        public DateTime? CountryInsertDate
-        {
-            get { return Fields.CountryInsertDate[this]; }
-            set { Fields.CountryInsertDate[this] = value; }
-        }
-
-        [DisplayName("Country Insert User Id"), Expression("jCountry.[InsertUserId]")]
-        public Int32? CountryInsertUserId
-        {
-            get { return Fields.CountryInsertUserId[this]; }
-            set { Fields.CountryInsertUserId[this] = value; }
-        }
-
-        [DisplayName("Country Update Date"), Expression("jCountry.[UpdateDate]")]
-        public DateTime? CountryUpdateDate
-        {
-            get { return Fields.CountryUpdateDate[this]; }
-            set { Fields.CountryUpdateDate[this] = value; }
-        }
-
-        [DisplayName("Country Update User Id"), Expression("jCountry.[UpdateUserId]")]
-        public Int32? CountryUpdateUserId
-        {
-            get { return Fields.CountryUpdateUserId[this]; }
-            set { Fields.CountryUpdateUserId[this] = value; }
-        }
-
         [DisplayName("Country Name Fr Fr"), Expression("jCountry.[Name_FR_fr]")]
         public String CountryNameFrFr
         {
             get { return Fields.CountryNameFrFr[this]; }
             set { Fields.CountryNameFrFr[this] = value; }
         }
-
-        [DisplayName("Country Name En Gb"), Expression("jCountry.[Name_EN_gb]")]
-        public String CountryNameEnGb
-        {
-            get { return Fields.CountryNameEnGb[this]; }
-            set { Fields.CountryNameEnGb[this] = value; }
-        }
-
-        [DisplayName("Country Alpha3"), Expression("jCountry.[alpha3]")]
-        public String CountryAlpha3
-        {
-            get { return Fields.CountryAlpha3[this]; }
-            set { Fields.CountryAlpha3[this] = value; }
-        }
-
-        [DisplayName("Country Alpha2"), Expression("jCountry.[alpha2]")]
-        public String CountryAlpha2
-        {
-            get { return Fields.CountryAlpha2[this]; }
-            set { Fields.CountryAlpha2[this] = value; }
-        }
-
-        [DisplayName("Country Code Ue"), Expression("jCountry.[CodeUE]")]
-        public Int16? CountryCodeUe
-        {
-            get { return Fields.CountryCodeUe[this]; }
-            set { Fields.CountryCodeUe[this] = value; }
-        }
-
-        [DisplayName("Country Is Ocode"), Expression("jCountry.[ISOcode]")]
-        public String CountryIsOcode
-        {
-            get { return Fields.CountryIsOcode[this]; }
-            set { Fields.CountryIsOcode[this] = value; }
-        }
-
+        
         IIdField IIdRow.IdField
         {
             get { return Fields.Id; }
@@ -429,38 +273,17 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             public DateTimeField InactiveDate;
             public DateTimeField ArchiveDate;
 
-            public BooleanField ConsumerStatusDefaultValue;
-            public BooleanField ConsumerStatusIsActive;
-            public DateTimeField ConsumerStatusInsertDate;
-            public Int32Field ConsumerStatusInsertUserId;
-            public DateTimeField ConsumerStatusUpdateDate;
-            public Int32Field ConsumerStatusUpdateUserId;
             public StringField ConsumerStatusCaption;
 
-            public BooleanField CityDefaultValue;
             public BooleanField CityIsActive;
-            public DateTimeField CityInsertDate;
-            public Int32Field CityInsertUserId;
-            public DateTimeField CityUpdateDate;
-            public Int32Field CityUpdateUserId;
-            public StringField CityFrCodeInsee;
             public StringField CityCaption;
             public StringField City1;
             public StringField CityPostCode;
             public Int16Field CityCountry;
 
-            public BooleanField CountryDefaultValue;
-            public BooleanField CountryIsActive;
-            public DateTimeField CountryInsertDate;
-            public Int32Field CountryInsertUserId;
-            public DateTimeField CountryUpdateDate;
-            public Int32Field CountryUpdateUserId;
             public StringField CountryNameFrFr;
-            public StringField CountryNameEnGb;
-            public StringField CountryAlpha3;
-            public StringField CountryAlpha2;
-            public Int16Field CountryCodeUe;
-            public StringField CountryIsOcode;
+
+
 
             public RowFields()
                 : base()

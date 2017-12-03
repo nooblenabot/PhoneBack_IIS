@@ -14,6 +14,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Caption';
         export const localTextPrefix = 'PhoneBack.SetCatgticket';
+        export const lookupKey = 'PhoneBack.SetCatgticket';
+
+        export function getLookup(): Q.Lookup<SetCatgticketRow> {
+            return Q.getLookup<SetCatgticketRow>('PhoneBack.SetCatgticket');
+        }
 
         export namespace Fields {
             export declare const Id: string;

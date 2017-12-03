@@ -13,6 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Consumerstatus"), InstanceName("Set Consumerstatus"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("PhoneBack.SetConsumerstatus")]
     public sealed class SetConsumerstatusRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

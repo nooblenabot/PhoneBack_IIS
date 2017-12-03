@@ -13,6 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Bussdiv"), InstanceName("Set Bussdiv"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("PhoneBack.SetBussdiv")]
     public sealed class SetBussdivRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

@@ -13,6 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set City"), InstanceName("Set City"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("PhoneBack.City")]
     public sealed class SetCityRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
@@ -93,52 +94,11 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Country"), ForeignKey("[dbo].[SET_COUNTRY]", "Id"), LeftJoin("jCountry"), TextualField("CountryNameFrFr")]
+        [LookupEditor(typeof(SetCountryRow), MinimumResultsForSearch = 1, InplaceAdd = false)]
         public Int16? Country
         {
             get { return Fields.Country[this]; }
             set { Fields.Country[this] = value; }
-        }
-
-        [DisplayName("Country Default Value"), Expression("jCountry.[DefaultValue]")]
-        public Boolean? CountryDefaultValue
-        {
-            get { return Fields.CountryDefaultValue[this]; }
-            set { Fields.CountryDefaultValue[this] = value; }
-        }
-
-        [DisplayName("Country Is Active"), Expression("jCountry.[IsActive]")]
-        public Boolean? CountryIsActive
-        {
-            get { return Fields.CountryIsActive[this]; }
-            set { Fields.CountryIsActive[this] = value; }
-        }
-
-        [DisplayName("Country Insert Date"), Expression("jCountry.[InsertDate]")]
-        public DateTime? CountryInsertDate
-        {
-            get { return Fields.CountryInsertDate[this]; }
-            set { Fields.CountryInsertDate[this] = value; }
-        }
-
-        [DisplayName("Country Insert User Id"), Expression("jCountry.[InsertUserId]")]
-        public Int32? CountryInsertUserId
-        {
-            get { return Fields.CountryInsertUserId[this]; }
-            set { Fields.CountryInsertUserId[this] = value; }
-        }
-
-        [DisplayName("Country Update Date"), Expression("jCountry.[UpdateDate]")]
-        public DateTime? CountryUpdateDate
-        {
-            get { return Fields.CountryUpdateDate[this]; }
-            set { Fields.CountryUpdateDate[this] = value; }
-        }
-
-        [DisplayName("Country Update User Id"), Expression("jCountry.[UpdateUserId]")]
-        public Int32? CountryUpdateUserId
-        {
-            get { return Fields.CountryUpdateUserId[this]; }
-            set { Fields.CountryUpdateUserId[this] = value; }
         }
 
         [DisplayName("Country Name Fr Fr"), Expression("jCountry.[Name_FR_fr]")]
@@ -148,41 +108,6 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.CountryNameFrFr[this] = value; }
         }
 
-        [DisplayName("Country Name En Gb"), Expression("jCountry.[Name_EN_gb]")]
-        public String CountryNameEnGb
-        {
-            get { return Fields.CountryNameEnGb[this]; }
-            set { Fields.CountryNameEnGb[this] = value; }
-        }
-
-        [DisplayName("Country Alpha3"), Expression("jCountry.[alpha3]")]
-        public String CountryAlpha3
-        {
-            get { return Fields.CountryAlpha3[this]; }
-            set { Fields.CountryAlpha3[this] = value; }
-        }
-
-        [DisplayName("Country Alpha2"), Expression("jCountry.[alpha2]")]
-        public String CountryAlpha2
-        {
-            get { return Fields.CountryAlpha2[this]; }
-            set { Fields.CountryAlpha2[this] = value; }
-        }
-
-        [DisplayName("Country Code Ue"), Expression("jCountry.[CodeUE]")]
-        public Int16? CountryCodeUe
-        {
-            get { return Fields.CountryCodeUe[this]; }
-            set { Fields.CountryCodeUe[this] = value; }
-        }
-
-        [DisplayName("Country Is Ocode"), Expression("jCountry.[ISOcode]")]
-        public String CountryIsOcode
-        {
-            get { return Fields.CountryIsOcode[this]; }
-            set { Fields.CountryIsOcode[this] = value; }
-        }
-
         IIdField IIdRow.IdField
         {
             get { return Fields.Id; }
@@ -190,7 +115,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.FrCodeInsee; }
+            get { return Fields.Caption; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -215,18 +140,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             public StringField PostCode;
             public Int16Field Country;
 
-            public BooleanField CountryDefaultValue;
-            public BooleanField CountryIsActive;
-            public DateTimeField CountryInsertDate;
-            public Int32Field CountryInsertUserId;
-            public DateTimeField CountryUpdateDate;
-            public Int32Field CountryUpdateUserId;
             public StringField CountryNameFrFr;
-            public StringField CountryNameEnGb;
-            public StringField CountryAlpha3;
-            public StringField CountryAlpha2;
-            public Int16Field CountryCodeUe;
-            public StringField CountryIsOcode;
 
             public RowFields()
                 : base()

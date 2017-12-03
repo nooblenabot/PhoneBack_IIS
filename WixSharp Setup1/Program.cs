@@ -16,7 +16,7 @@ namespace WixSharpSetup
                                  new File("Program.cs")));
 
             project.GUID = new Guid("6fe30b47-2577-43ad-9095-1861ba25889b");
-            project.LaunchConditions = Environment.GetEnvironmentVariable(.;
+            //project.LaunchConditions = Environment.GetEnvironmentVariable(.;
 
             //custom set of standard UI dialogs
             project.ManagedUI = new ManagedUI();

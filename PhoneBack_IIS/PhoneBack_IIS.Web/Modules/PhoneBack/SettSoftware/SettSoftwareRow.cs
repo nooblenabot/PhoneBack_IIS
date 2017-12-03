@@ -13,6 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Sett Software"), InstanceName("Sett Software"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("PhoneBack.SettSoftware")]
     public sealed class SettSoftwareRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

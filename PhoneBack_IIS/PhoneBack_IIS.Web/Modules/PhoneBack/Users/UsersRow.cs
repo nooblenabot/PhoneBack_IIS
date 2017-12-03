@@ -114,6 +114,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("My Company"), ForeignKey("[dbo].[SET_MYCOMPANY]", "Id"), LeftJoin("jMyCompany"), TextualField("MyCompanyName")]
+        [LookupEditor(typeof(SetMycompanyRow), MinimumResultsForSearch = -1, InplaceAdd = false)]
         public Int16? MyCompanyId
         {
             get { return Fields.MyCompanyId[this]; }
@@ -121,6 +122,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Business Division"), ForeignKey("[dbo].[SET_BUSSDIV]", "Id"), LeftJoin("jBusinessDivision"), TextualField("BusinessDivisionCaption")]
+        [LookupEditor(typeof(SetBussdivRow), MinimumResultsForSearch = -1, InplaceAdd = false)]
         public Int16? BusinessDivision
         {
             get { return Fields.BusinessDivision[this]; }
