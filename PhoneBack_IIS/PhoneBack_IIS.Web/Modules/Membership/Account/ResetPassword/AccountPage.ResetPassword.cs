@@ -52,7 +52,7 @@ namespace PhoneBack_IIS.Membership.Pages
         [HttpPost, JsonFilter]
         public Result<ServiceResponse> ResetPassword(ResetPasswordRequest request)
         {
-            return this.InTransaction("Default", uow =>
+            return this.InTransaction("PhoneBack", uow =>
             {
                 request.CheckNotNull();
 

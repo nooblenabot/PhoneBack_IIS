@@ -7,7 +7,7 @@ namespace PhoneBack_IIS.Administration.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), DisplayName("Roles"), InstanceName("Role"), TwoLevelCached]
+    [ConnectionKey("PhoneBack"), DisplayName("Roles"), InstanceName("Role"), TwoLevelCached]
     [ReadPermission(PermissionKeys.Security)]
     [ModifyPermission(PermissionKeys.Security)]
     [LookupScript("Administration.Role")]

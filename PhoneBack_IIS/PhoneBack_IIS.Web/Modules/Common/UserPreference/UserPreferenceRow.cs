@@ -6,7 +6,7 @@ namespace PhoneBack_IIS.Common.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), DisplayName("User Preferences"), InstanceName("UserPreference"), TwoLevelCached]
+    [ConnectionKey("PhoneBack"), DisplayName("User Preferences"), InstanceName("UserPreference"), TwoLevelCached]
     [ReadPermission("")]
     [ModifyPermission("")]
     public sealed class UserPreferenceRow : Row, IIdRow, INameRow

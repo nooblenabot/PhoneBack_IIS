@@ -26,7 +26,7 @@ namespace PhoneBack_IIS.Membership.Pages
         [HttpPost, JsonFilter]
         public Result<ServiceResponse> ForgotPassword(ForgotPasswordRequest request)
         {
-            return this.UseConnection("Default", connection =>
+            return this.UseConnection("PhoneBack", connection =>
             {
                 request.CheckNotNull();
 

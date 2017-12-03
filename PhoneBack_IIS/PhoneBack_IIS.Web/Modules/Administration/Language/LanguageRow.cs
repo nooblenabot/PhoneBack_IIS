@@ -7,7 +7,7 @@ namespace PhoneBack_IIS.Administration.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), DisplayName("Languages"), InstanceName("Language"), TwoLevelCached]
+    [ConnectionKey("PhoneBack"), DisplayName("Languages"), InstanceName("Language"), TwoLevelCached]
     [ReadPermission(PermissionKeys.Translation)]
     [ModifyPermission(PermissionKeys.Translation)]
     [LookupScript(typeof(LanguageLookup))]

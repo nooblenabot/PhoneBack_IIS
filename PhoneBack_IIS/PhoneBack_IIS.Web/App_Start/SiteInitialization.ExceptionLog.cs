@@ -12,7 +12,7 @@
     {
         private static void InitializeExceptionLog()
         {
-            ErrorStore.Setup("PhoneBack_IIS", new SqlErrorStore(null, "Default"));
+            ErrorStore.Setup("PhoneBack_IIS", new SqlErrorStore(null, "PhoneBack"));
 
             ErrorStore.GetCustomData = (exception, context, data) =>
             {

@@ -815,6 +815,7 @@
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="wkhtmltopdf-license.txt" />
+    <Content Include="Modules\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -1297,6 +1298,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.ConsumerColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.PersonColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetBussdivColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCatgticketColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCityColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetConsumerstatusColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCountryColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetMycompanyColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetPriorityticketColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetTicketstatusColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SettSoftwareColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketCommentColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.UsersColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Common\Helpers\StaticTextBlock.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
@@ -1514,7 +1557,6 @@
     <Content Include="Modules\Web.config" />
     <Content Include="Modules\Common\Dashboard\DashboardIndex.cshtml" />
     <Content Include="Modules\Membership\_ViewStart.cshtml" />
-    <Content Include="Modules\_ViewStart.cshtml" />
     <Content Include="Views\Templates\EntityDialog.Template.html" />
     <Content Include="Views\Templates\PropertyDialog.Template.html" />
     <Content Include="Views\Web.config" />
@@ -1547,6 +1589,175 @@
     <TypeScriptCompile Include="Modules\Common\Helpers\BasicProgressDialog.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\BulkServiceAction.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.ConsumerRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.ConsumerService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\Consumer\ConsumerIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Consumer\ConsumerDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Consumer\ConsumerGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.ConsumerForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="wwwroot\Content\site\site.phoneback.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.PersonRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.PersonService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\Person\PersonIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Person\PersonDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Person\PersonGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.PersonForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetBussdivRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetBussdivService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetBussdiv\SetBussdivIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetBussdiv\SetBussdivDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetBussdiv\SetBussdivGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetBussdivForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCatgticketRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCatgticketService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetCatgticket\SetCatgticketIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCatgticketForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCityRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCityService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetCity\SetCityIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetCity\SetCityDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetCity\SetCityGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCityForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetConsumerstatusRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetConsumerstatusService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetConsumerstatusForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCountryRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCountryService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetCountry\SetCountryIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetCountry\SetCountryDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetCountry\SetCountryGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetCountryForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetMycompanyRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetMycompanyService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetMycompany\SetMycompanyIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetMycompany\SetMycompanyDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetMycompany\SetMycompanyGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetMycompanyForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetPriorityticketRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetPriorityticketService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetPriorityticketForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetTicketstatusRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetTicketstatusService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SetTicketstatusForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SettSoftwareRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SettSoftwareService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\SettSoftware\SettSoftwareIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SettSoftware\SettSoftwareDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\SettSoftware\SettSoftwareGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.SettSoftwareForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\Ticket\TicketIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Ticket\TicketDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Ticket\TicketGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketCommentRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketCommentService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\TicketComment\TicketCommentIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\TicketComment\TicketCommentDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\TicketComment\TicketCommentGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.TicketCommentForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.UsersRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.UsersService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\PhoneBack\Users\UsersIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Users\UsersDialog.ts" />
+    <TypeScriptCompile Include="Modules\PhoneBack\Users\UsersGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.UsersForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1564,6 +1775,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130001_Settings.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130029_Country.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130031_City.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130039_ModificationUser.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130038_ConsumerPerson.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130013_PriorityTicket.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130009_ConsumerStatus.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130011_BusinessDivision.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130012_CategoryTicket.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130014_TicketStatus.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_140001_Ticket.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130036_Consumer.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_130035_MyCompany.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161103_140002_TicketComments.cs" />
     <Compile Include="Modules\Administration\AdministrationNavigation.cs" />
     <Compile Include="Modules\Administration\Language\LanguageLookup.cs" />
     <Compile Include="Modules\Administration\RolePermission\RolePermissionUpdateRequest.cs" />
@@ -1594,62 +1819,17 @@
     <Compile Include="Imports\ClientTypes\Administration.RoleCheckEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.ChangingLookupTextEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.FilteredLookupDetailEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.HardcodedValuesEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.InlineImageFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.ProduceSeafoodCategoryEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
     <Compile Include="Imports\ClientTypes\Common.EnumSelectFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Meeting.MeetingAttendeeEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.CustomerEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.EmployeeFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.EmployeeListFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.FreightFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.NotesEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.OrderDetailsEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.PhoneEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.ShipperFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Organization.BusinessUnitEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\StaticTextBlockAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\DefaultDB\DefaultDB_20160515_072600_UserPreferences.cs" />
-    <Compile Include="Migrations\DefaultDB\DefaultDB_20161029_130000_ExceptionLog.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20160515_072600_UserPreferences.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20161029_130000_ExceptionLog.cs" />
     <Compile Include="Migrations\MigrationUtils.cs" />
-    <Compile Include="Migrations\DefaultDB\DefaultDB_20141111_113000_Permissions.cs" />
-    <Compile Include="Migrations\DefaultDB\DefaultDB_20141103_140000_Initial.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20141111_113000_Permissions.cs" />
+    <Compile Include="Migrations\DefaultDB\PhoneBackDB_20141103_140000_Initial.cs" />
     <Compile Include="Modules\Administration\Translation\TranslationUpdateRequest.cs" />
     <Compile Include="Modules\Administration\Translation\TranslationListRequest.cs" />
     <Compile Include="Modules\Administration\Translation\TranslationItem.cs" />
@@ -1725,6 +1905,91 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\Consumer\ConsumerRow.cs" />
+    <Compile Include="Modules\PhoneBack\Consumer\ConsumerRepository.cs" />
+    <Compile Include="Modules\PhoneBack\Consumer\ConsumerEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\Consumer\ConsumerPage.cs" />
+    <Compile Include="Modules\PhoneBack\Consumer\ConsumerColumns.cs" />
+    <Compile Include="Modules\PhoneBack\Consumer\ConsumerForm.cs" />
+    <Compile Include="Modules\PhoneBack\PhoneBackNavigation.cs" />
+    <Compile Include="Modules\PhoneBack\Person\PersonRow.cs" />
+    <Compile Include="Modules\PhoneBack\Person\PersonRepository.cs" />
+    <Compile Include="Modules\PhoneBack\Person\PersonEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\Person\PersonPage.cs" />
+    <Compile Include="Modules\PhoneBack\Person\PersonColumns.cs" />
+    <Compile Include="Modules\PhoneBack\Person\PersonForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetBussdiv\SetBussdivRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetBussdiv\SetBussdivRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetBussdiv\SetBussdivEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetBussdiv\SetBussdivPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetBussdiv\SetBussdivColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetBussdiv\SetBussdivForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetCatgticket\SetCatgticketForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetCity\SetCityRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetCity\SetCityRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetCity\SetCityEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetCity\SetCityPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetCity\SetCityColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetCity\SetCityForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetConsumerstatus\SetConsumerstatusForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetCountry\SetCountryRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetCountry\SetCountryRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetCountry\SetCountryEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetCountry\SetCountryPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetCountry\SetCountryColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetCountry\SetCountryForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetMycompany\SetMycompanyRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetMycompany\SetMycompanyRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetMycompany\SetMycompanyEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetMycompany\SetMycompanyPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetMycompany\SetMycompanyColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetMycompany\SetMycompanyForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetPriorityticket\SetPriorityticketForm.cs" />
+    <Compile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusRow.cs" />
+    <Compile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusPage.cs" />
+    <Compile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SetTicketstatus\SetTicketstatusForm.cs" />
+    <Compile Include="Modules\PhoneBack\SettSoftware\SettSoftwareRow.cs" />
+    <Compile Include="Modules\PhoneBack\SettSoftware\SettSoftwareRepository.cs" />
+    <Compile Include="Modules\PhoneBack\SettSoftware\SettSoftwareEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\SettSoftware\SettSoftwarePage.cs" />
+    <Compile Include="Modules\PhoneBack\SettSoftware\SettSoftwareColumns.cs" />
+    <Compile Include="Modules\PhoneBack\SettSoftware\SettSoftwareForm.cs" />
+    <Compile Include="Modules\PhoneBack\Ticket\TicketRow.cs" />
+    <Compile Include="Modules\PhoneBack\Ticket\TicketRepository.cs" />
+    <Compile Include="Modules\PhoneBack\Ticket\TicketEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\Ticket\TicketPage.cs" />
+    <Compile Include="Modules\PhoneBack\Ticket\TicketColumns.cs" />
+    <Compile Include="Modules\PhoneBack\Ticket\TicketForm.cs" />
+    <Compile Include="Modules\PhoneBack\TicketComment\TicketCommentRow.cs" />
+    <Compile Include="Modules\PhoneBack\TicketComment\TicketCommentRepository.cs" />
+    <Compile Include="Modules\PhoneBack\TicketComment\TicketCommentEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\TicketComment\TicketCommentPage.cs" />
+    <Compile Include="Modules\PhoneBack\TicketComment\TicketCommentColumns.cs" />
+    <Compile Include="Modules\PhoneBack\TicketComment\TicketCommentForm.cs" />
+    <Compile Include="Modules\PhoneBack\Users\UsersRow.cs" />
+    <Compile Include="Modules\PhoneBack\Users\UsersRepository.cs" />
+    <Compile Include="Modules\PhoneBack\Users\UsersEndpoint.cs" />
+    <Compile Include="Modules\PhoneBack\Users\UsersPage.cs" />
+    <Compile Include="Modules\PhoneBack\Users\UsersColumns.cs" />
+    <Compile Include="Modules\PhoneBack\Users\UsersForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1927,4 +2192,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <UsingTask AssemblyFile="$(SolutionDir)packages\WixSharp.1.4.10.0\build\SetEnvVar.dll" TaskName="SetEnvVar" />
 </Project>

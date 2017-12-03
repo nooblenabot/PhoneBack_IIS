@@ -29,7 +29,7 @@ namespace PhoneBack_IIS.Membership.Pages
         [HttpPost, JsonFilter]
         public Result<ServiceResponse> SignUp(SignUpRequest request)
         {
-            return this.UseConnection("Default", connection =>
+            return this.UseConnection("PhoneBack", connection =>
             {
                 request.CheckNotNull();
 
@@ -108,7 +108,7 @@ namespace PhoneBack_IIS.Membership.Pages
         [HttpGet]
         public ActionResult Activate(string t)
         {
-            using (var connection = SqlConnections.NewByKey("Default"))
+            using (var connection = SqlConnections.NewByKey("PhoneBack"))
             using (var uow = new UnitOfWork(connection))
             {
                 int userId;
