@@ -574,6 +574,7 @@
     <Content Include="Imports\Web.config" />
     <Content Include="Migrations\Web.config" />
     <Content Include="Content\site\CssBundles.json" />
+    <Content Include="Modules\PhoneBack\Ticket\TicketDialog.Template.html" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1301,6 +1302,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.ConsumerColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.Gender.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PhoneBack.PersonColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1840,6 +1844,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Common\Helpers\Enumerator.cs" />
     <Compile Include="Modules\Common\Navigation\NavigationItems.cs" />
     <Compile Include="Modules\Common\Navigation\NavigationModel.cs" />
     <Compile Include="Modules\Common\Reporting\DynamicDataReport.cs" />

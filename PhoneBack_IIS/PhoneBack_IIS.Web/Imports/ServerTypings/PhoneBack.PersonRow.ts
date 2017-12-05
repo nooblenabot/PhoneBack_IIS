@@ -11,13 +11,15 @@
         Name?: string;
         MaidenName?: string;
         CorporateId?: number;
-        Sexe?: number;
+        Sexe?: Gender;
         Phone?: string;
         Gsm?: string;
         Email1?: string;
         Caption?: string;
         InactiveDate?: string;
         ArchiveDate?: string;
+        FullConsumer?: string;
+        FullName?: string;
         CorporateIsMorale?: boolean;
         CorporateIsActive?: boolean;
         CorporateIsArchive?: boolean;
@@ -44,7 +46,7 @@
 
     export namespace PersonRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'Surname';
+        export const nameProperty = 'FullConsumer';
         export const localTextPrefix = 'PhoneBack.Person';
         export const lookupKey = 'PhoneBack.Person';
 
@@ -71,6 +73,8 @@
             export declare const Caption: string;
             export declare const InactiveDate: string;
             export declare const ArchiveDate: string;
+            export declare const FullConsumer: string;
+            export declare const FullName: string;
             export declare const CorporateIsMorale: string;
             export declare const CorporateIsActive: string;
             export declare const CorporateIsArchive: string;
@@ -114,6 +118,8 @@
             'Caption', 
             'InactiveDate', 
             'ArchiveDate', 
+            'FullConsumer', 
+            'FullName', 
             'CorporateIsMorale', 
             'CorporateIsActive', 
             'CorporateIsArchive', 

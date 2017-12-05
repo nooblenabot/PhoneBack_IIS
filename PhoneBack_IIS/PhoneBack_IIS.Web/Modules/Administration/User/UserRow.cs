@@ -10,8 +10,7 @@ namespace PhoneBack_IIS.Administration.Entities
     [ConnectionKey("PhoneBack"), TableName("Users"), DisplayName("Users"), InstanceName("User"), TwoLevelCached]
     [ReadPermission(PermissionKeys.Security)]
     [ModifyPermission(PermissionKeys.Security)]
-    [LookupScript("Administration.User", Permission = PermissionKeys.Security)]
-    //[LookupScript("PhoneBack.User")]
+    [LookupScript("Administration.User",Permission = "?")]
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
         [DisplayName("User Id"), Identity]
@@ -78,7 +77,7 @@ namespace PhoneBack_IIS.Administration.Entities
             set { Fields.Password[this] = value; }
         }
 
-        [NotNull, Insertable(false), Updatable(true)]
+        [NotNull, Insertable(false), Updatable(true),LookupInclude]
         public Int16? IsActive
         {
             get { return Fields.IsActive[this]; }

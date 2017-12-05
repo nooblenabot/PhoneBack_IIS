@@ -23,42 +23,42 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Default Value"), NotNull]
+        [DisplayName("Default Value"), NotNull, Updatable(false), HideOnInsert]
         public Boolean? DefaultValue
         {
             get { return Fields.DefaultValue[this]; }
             set { Fields.DefaultValue[this] = value; }
         }
 
-        [DisplayName("Is Active"), NotNull]
+        [DisplayName("Is Active"), NotNull,LookupInclude]
         public Boolean? IsActive
         {
             get { return Fields.IsActive[this]; }
             set { Fields.IsActive[this] = value; }
         }
 
-        [DisplayName("Insert Date"), NotNull]
+        [DisplayName("Insert Date"), HideOnInsert, Updatable(false), DateTimeFormatter]
         public DateTime? InsertDate
         {
             get { return Fields.InsertDate[this]; }
             set { Fields.InsertDate[this] = value; }
         }
 
-        [DisplayName("Insert User Id"), NotNull]
+        [DisplayName("Insert User Id"), HideOnInsert, Updatable(false), ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIUser"), TextualField("InsertUsername")]
         public Int32? InsertUserId
         {
             get { return Fields.InsertUserId[this]; }
             set { Fields.InsertUserId[this] = value; }
         }
 
-        [DisplayName("Update Date")]
+        [DisplayName("Update Date"), HideOnInsert, DateTimeFormatter]
         public DateTime? UpdateDate
         {
             get { return Fields.UpdateDate[this]; }
             set { Fields.UpdateDate[this] = value; }
         }
 
-        [DisplayName("Update User Id")]
+        [DisplayName("Update User Id"), HideOnInsert, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jUUser"), TextualField("UpdateUsername")]
         public Int32? UpdateUserId
         {
             get { return Fields.UpdateUserId[this]; }
@@ -84,6 +84,20 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         {
             get { return Fields.Caption[this]; }
             set { Fields.Caption[this] = value; }
+        }
+
+        [DisplayName("Username"), Expression("jIUser.[Username]"), HideOnInsert, Updatable(false)]
+        public String InsertUsername
+        {
+            get { return Fields.InsertUsername[this]; }
+            set { Fields.InsertUsername[this] = value; }
+        }
+
+        [DisplayName("Username"), Expression("jUUser.[Username]"), HideOnInsert]
+        public String UpdateUsername
+        {
+            get { return Fields.UpdateUsername[this]; }
+            set { Fields.UpdateUsername[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -115,6 +129,9 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             public StringField Setting;
             public StringField Value;
             public StringField Caption;
+
+            public StringField InsertUsername;
+            public StringField UpdateUsername;
 
             public RowFields()
                 : base()

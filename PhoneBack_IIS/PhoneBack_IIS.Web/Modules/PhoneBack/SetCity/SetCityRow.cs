@@ -13,7 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set City"), InstanceName("Set City"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.City")]
+    [LookupScript("PhoneBack.City", Permission = "?")]
     public sealed class SetCityRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

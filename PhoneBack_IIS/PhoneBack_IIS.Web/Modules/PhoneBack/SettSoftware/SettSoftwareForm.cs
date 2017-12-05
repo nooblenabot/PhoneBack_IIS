@@ -13,14 +13,22 @@ namespace PhoneBack_IIS.PhoneBack.Forms
     [BasedOnRow(typeof(Entities.SettSoftwareRow))]
     public class SettSoftwareForm
     {
+        [QuarterWidth]
         public Boolean DefaultValue { get; set; }
+        [QuarterWidth]
         public Boolean IsActive { get; set; }
+        [DateTimeFormatter, QuarterWidth]
         public DateTime InsertDate { get; set; }
-        public Int32 InsertUserId { get; set; }
+        [QuarterWidth]
+        public String InsertUsername { get; set; }
+        [Updatable(false), QuarterWidth, DateTimeFormatter]
         public DateTime UpdateDate { get; set; }
-        public Int32 UpdateUserId { get; set; }
+        [Updatable(false), QuarterWidth]
+        public String UpdateUsername { get; set; }
+        [Updatable(false)]
         public String Setting { get; set; }
         public String Value { get; set; }
+        [Updatable(false)]
         public String Caption { get; set; }
     }
 }

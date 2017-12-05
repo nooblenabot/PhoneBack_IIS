@@ -13,7 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Ticketstatus"), InstanceName("Set Ticketstatus"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.SetTicketstatus")]
+    [LookupScript("PhoneBack.SetTicketstatus", Permission = "?")]
     public sealed class SetTicketstatusRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
@@ -30,7 +30,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.DefaultValue[this] = value; }
         }
 
-        [DisplayName("Is Active"), NotNull]
+        [DisplayName("Is Active"), NotNull,LookupInclude]
         public Boolean? IsActive
         {
             get { return Fields.IsActive[this]; }

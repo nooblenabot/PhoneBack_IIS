@@ -12,5 +12,23 @@ namespace PhoneBack_IIS.PhoneBack {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected addButtonClick() {
+            //let now = new Date();
+            this.editItem(<TicketRow>{
+                Status: 1,
+                Priority: 1
+            });
+        }
+
+        protected getButtons(): Serenity.ToolButton[] {
+            var buttons = super.getButtons()
+            if (Authorization.hasPermission("Ticket:Read:Modify")) { }
+            else
+            {
+                buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
+            }
+            return buttons;
+        }
     }
 }

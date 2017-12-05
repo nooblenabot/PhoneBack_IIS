@@ -13,7 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Priorityticket"), InstanceName("Set Priorityticket"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.SetPriorityticket")]
+    [LookupScript("PhoneBack.SetPriorityticket", Permission = "?")]
     public sealed class SetPriorityticketRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

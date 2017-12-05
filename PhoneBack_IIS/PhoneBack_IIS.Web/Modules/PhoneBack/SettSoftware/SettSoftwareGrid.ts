@@ -12,5 +12,12 @@ namespace PhoneBack_IIS.PhoneBack {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected addButtonClick() {
+            //let now = new Date();
+            this.editItem(<SettSoftwareRow>{
+                IsActive: true,
+            });
+        }
     }
 }

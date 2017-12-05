@@ -13,7 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Country"), InstanceName("Set Country"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.Country")]
+    [LookupScript("PhoneBack.Country", Permission = "?")]
     public sealed class SetCountryRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), PrimaryKey]

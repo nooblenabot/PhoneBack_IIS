@@ -13,7 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Mycompany"), InstanceName("Set Mycompany"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.Mycompany")]
+    [LookupScript("PhoneBack.Mycompany", Permission = "?")]
     public sealed class SetMycompanyRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

@@ -6,14 +6,16 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.IO;
 
     [ConnectionKey("PhoneBack"), TableName("[dbo].[TICKET]")]
     [DisplayName("Ticket"), InstanceName("Ticket"), TwoLevelCached]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.Ticket")]
+    [ReadPermission("Ticket:Read")]
+    [ModifyPermission("Ticket:Read:Modify")]
+    [DeletePermission("Administration:General")]
+    [LookupScript("PhoneBack.Ticket", Permission = "?")]
     public sealed class TicketRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
@@ -23,7 +25,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Identity Consumer"), ForeignKey("[dbo].[PERSON]", "Id"), LeftJoin("jIdentityConsumer"), TextualField("IdentityConsumerSurname")]
+        [DisplayName("Identity Consumer"), ForeignKey("[dbo].[PERSON]", "Id"), LeftJoin("jIdentityConsumer"), TextualField("FullIdentityConsumer")]
         [LookupEditor(typeof(PersonRow), MinimumResultsForSearch = 1, InplaceAdd = false)]
         public Int64? IdentityConsumer
         {
@@ -31,42 +33,42 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.IdentityConsumer[this] = value; }
         }
 
-        [DisplayName("Create Date"), NotNull]
+        [DisplayName("Create Date"), HideOnInsert, Updatable(false), DateTimeFormatter]
         public DateTime? CreateDate
         {
             get { return Fields.CreateDate[this]; }
             set { Fields.CreateDate[this] = value; }
         }
 
-        [DisplayName("Create User Id"), NotNull]
+        [DisplayName("Create User Id"), HideOnInsert, Updatable(false), ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIUser"), TextualField("InsertUsername")]
         public Int32? CreateUserId
         {
             get { return Fields.CreateUserId[this]; }
             set { Fields.CreateUserId[this] = value; }
         }
 
-        [DisplayName("Update Date")]
+        [DisplayName("Update Date"), HideOnInsert,  DateTimeFormatter]
         public DateTime? UpdateDate
         {
             get { return Fields.UpdateDate[this]; }
             set { Fields.UpdateDate[this] = value; }
         }
 
-        [DisplayName("Update User Id")]
+        [DisplayName("Update User Id"), HideOnInsert, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jUUser"), TextualField("UpdateUsername")]
         public Int32? UpdateUserId
         {
             get { return Fields.UpdateUserId[this]; }
             set { Fields.UpdateUserId[this] = value; }
         }
 
-        [DisplayName("Close Date")]
+        [DisplayName("Close Date"), HideOnInsert, DateTimeFormatter]
         public DateTime? CloseDate
         {
             get { return Fields.CloseDate[this]; }
             set { Fields.CloseDate[this] = value; }
         }
 
-        [DisplayName("Close User Id")]
+        [DisplayName("Close User Id"), HideOnInsert, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jCUser"), TextualField("CloseUsername")]
         public Int32? CloseUserId
         {
             get { return Fields.CloseUserId[this]; }
@@ -74,7 +76,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Status"), ForeignKey("[dbo].[SET_TICKETSTATUS]", "Id"), LeftJoin("jStatus"), TextualField("StatusCaption")]
-        [LookupEditor(typeof(SetTicketstatusRow), MinimumResultsForSearch = -1, InplaceAdd = false)]
+        [LookupEditor(typeof(SetTicketstatusRow), MinimumResultsForSearch = -1, InplaceAdd = false, FilterField = "IsActive", FilterValue = true)]
         public Int16? Status
         {
             get { return Fields.Status[this]; }
@@ -90,37 +92,37 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Category"), ForeignKey("[dbo].[SET_CATGTICKET]", "Id"), LeftJoin("jCategory"), TextualField("CategoryCaption")]
-        [LookupEditor(typeof(SetCatgticketRow), MinimumResultsForSearch = -1, InplaceAdd = false
-            //, FilterField = "IsActive", FilterValue = SetSexeRow.IsActive.HasValue(true)
-            )]
+        [LookupEditor(typeof(SetCatgticketRow), MinimumResultsForSearch = -1, InplaceAdd = false)]
         public Int16? Category
         {
             get { return Fields.Category[this]; }
             set { Fields.Category[this] = value; }
         }
 
-        [DisplayName("To User"), ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jToUser"), TextualField("ToUserUsername")]
-        //[LookupEditor(typeof(Administration.AuthenticationService), MinimumResultsForSearch = -1, InplaceAdd = false)]
+        [DisplayName("To User"),NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jToUser"), TextualField("ToUserUsername")]
+        [LookupEditor(typeof(Administration.Entities.UserRow), MinimumResultsForSearch = -1, InplaceAdd = false, FilterField = "IsActive", FilterValue = 1)]
         public Int32? ToUserId
         {
             get { return Fields.ToUserId[this]; }
             set { Fields.ToUserId[this] = value; }
         }
 
-        [DisplayName("Subject"), Size(100), QuickSearch]
+        [DisplayName("Subject"),NotNull, Size(100), QuickSearch]
         public String Subject
         {
             get { return Fields.Subject[this]; }
             set { Fields.Subject[this] = value; }
         }
 
-        [DisplayName("Object"), Size(2000)]
+        [DisplayName("Object"),NotNull, Size(2000)]
+        [TextAreaEditor(Rows = 8)]
         public String Object
         {
             get { return Fields.Object[this]; }
             set { Fields.Object[this] = value; }
         }
 
+        #region consumer
         [DisplayName("Identity Consumer Surname"), Expression("jIdentityConsumer.[Surname]")]
         public String IdentityConsumerSurname
         {
@@ -183,6 +185,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             get { return Fields.IdentityConsumerCaption[this]; }
             set { Fields.IdentityConsumerCaption[this] = value; }
         }
+        #endregion
 
         [DisplayName("Status Caption"), Expression("jStatus.[Caption]")]
         public String StatusCaption
@@ -219,11 +222,32 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.ToUserUsername[this] = value; }
         }
 
-        [DisplayName("To User Display Name"), Expression("jToUser.[DisplayName]")]
-        public String ToUserDisplayName
+        [DisplayName("Username"), Expression("jIUser.[Username]"), HideOnInsert, Updatable(false)]
+        public String CreateUsername
         {
-            get { return Fields.ToUserDisplayName[this]; }
-            set { Fields.ToUserDisplayName[this] = value; }
+            get { return Fields.CreateUsername[this]; }
+            set { Fields.CreateUsername[this] = value; }
+        }
+
+        [DisplayName("Username"), Expression("jUUser.[Username]"), HideOnInsert]
+        public String UpdateUsername
+        {
+            get { return Fields.UpdateUsername[this]; }
+            set { Fields.UpdateUsername[this] = value; }
+        }
+        [DisplayName("Username"), Expression("jCUser.[Username]"), HideOnInsert]
+        public String CloseUsername
+        {
+            get { return Fields.CloseUsername[this]; }
+            set { Fields.CloseUsername[this] = value; }
+        }
+
+        [MasterDetailRelation(foreignKey: "TicketId")]
+        [DisplayName("Comments"), NotMapped]
+        public List<TicketCommentRow> Comment
+        {
+            get { return Fields.Comment[this]; }
+            set { Fields.Comment[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -278,7 +302,12 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             public StringField CategoryCaption;
 
             public StringField ToUserUsername;
-            public StringField ToUserDisplayName;
+
+            public StringField CreateUsername;
+            public StringField UpdateUsername;
+            public StringField CloseUsername;
+
+            public readonly RowListField<TicketCommentRow> Comment;
 
             public RowFields()
                 : base()

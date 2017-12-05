@@ -11,9 +11,11 @@ namespace PhoneBack_IIS.PhoneBack.Entities
 
     [ConnectionKey("PhoneBack"), TableName("[dbo].[TICKET_COMMENT]")]
     [DisplayName("Ticket Comment"), InstanceName("Ticket Comment"), TwoLevelCached]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.TicketComment")]
+    [ReadPermission("Ticket:Read")]
+    [InsertPermission("Ticket:Modify")]
+    //[ModifyPermission("Ticket:Modify")]
+    [DeletePermission("Administration:General")]
+    [LookupScript("PhoneBack.TicketComment", Permission = "?")]
     public sealed class TicketCommentRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

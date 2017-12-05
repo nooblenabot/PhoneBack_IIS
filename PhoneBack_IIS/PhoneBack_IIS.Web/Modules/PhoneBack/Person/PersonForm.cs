@@ -23,7 +23,7 @@ namespace PhoneBack_IIS.PhoneBack.Forms
         public String Name { get; set; }
         public String MaidenName { get; set; }
         public Int64 CorporateId { get; set; }
-        public Int16 Sexe { get; set; }
+        public Gender Sexe { get; set; }
         public String Phone { get; set; }
         public String Gsm { get; set; }
         public String Email1 { get; set; }

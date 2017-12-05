@@ -13,7 +13,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
     [DisplayName("Set Catgticket"), InstanceName("Set Catgticket"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.SetCatgticket")]
+    [LookupScript("PhoneBack.SetCatgticket", Permission = "?")]
     public sealed class SetCatgticketRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

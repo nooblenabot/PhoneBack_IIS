@@ -11,9 +11,9 @@ namespace PhoneBack_IIS.PhoneBack.Entities
 
     [ConnectionKey("PhoneBack"), TableName("[dbo].[PERSON]")]
     [DisplayName("Person"), InstanceName("Person"), TwoLevelCached]
-    [ReadPermission("Administration:General")]
+    [ReadPermission("Ticket:Read")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.Person")]
+    [LookupScript("PhoneBack.Person", Permission = "?")]
     public sealed class PersonRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
@@ -95,13 +95,13 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Sexe")]
-        public Int16? Sexe
+        public Gender? Sexe
         {
-            get { return Fields.Sexe[this]; }
-            set { Fields.Sexe[this] = value; }
+            get { return (Gender?)Fields.Sexe[this]; }
+            set { Fields.Sexe[this] = (Int16?)value; }
         }
 
-        [DisplayName("Phone"), Size(20)]
+            [DisplayName("Phone"), Size(20)]
         public String Phone
         {
             get { return Fields.Phone[this]; }
@@ -142,6 +142,24 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             get { return Fields.ArchiveDate[this]; }
             set { Fields.ArchiveDate[this] = value; }
         }
+
+
+        [DisplayName("Identity Consumer"),NotMapped, LookupInclude]
+        [Expression("CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(T0.[Sexe],' '),T0.[Surname]),' '),T0.[Name]),' ( '),T0.[CorporateId]),')')")]
+        public String FullConsumer
+        {
+            get { return Fields.FullConsumer[this]; }
+            set { Fields.FullConsumer[this] = value; }
+        }
+
+        [DisplayName("FullName"), NotMapped]
+        [Expression("CONCAT(CONCAT(T0.[Sexe],' '),CONCAT(T0.[Surname],CONCAT(' ',T0.[Name])))")]
+        public String FullName
+        {
+            get { return Fields.FullName[this]; }
+            set { Fields.FullName[this] = value; }
+        }
+
 
         [DisplayName("Corporate Is Morale"), Expression("jCorporate.[IsMorale]")]
         public Boolean? CorporateIsMorale
@@ -304,7 +322,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.Surname; }
+            get { return Fields.FullConsumer; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -334,6 +352,9 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             public StringField Caption;
             public DateTimeField InactiveDate;
             public DateTimeField ArchiveDate;
+
+            public StringField FullConsumer;
+            public StringField FullName;
 
             public BooleanField CorporateIsMorale;
             public BooleanField CorporateIsActive;

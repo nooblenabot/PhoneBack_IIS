@@ -10,6 +10,8 @@
         Setting?: string;
         Value?: string;
         Caption?: string;
+        InsertUsername?: string;
+        UpdateUsername?: string;
     }
 
     export namespace SettSoftwareRow {
@@ -33,6 +35,8 @@
             export declare const Setting: string;
             export declare const Value: string;
             export declare const Caption: string;
+            export declare const InsertUsername: string;
+            export declare const UpdateUsername: string;
         }
 
         [
@@ -45,7 +49,9 @@
             'UpdateUserId', 
             'Setting', 
             'Value', 
-            'Caption'
+            'Caption', 
+            'InsertUsername', 
+            'UpdateUsername'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

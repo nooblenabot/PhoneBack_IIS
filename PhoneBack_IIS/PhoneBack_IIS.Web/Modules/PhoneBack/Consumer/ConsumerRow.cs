@@ -11,9 +11,9 @@ namespace PhoneBack_IIS.PhoneBack.Entities
 
     [ConnectionKey("PhoneBack"), TableName("[dbo].[CONSUMER]")]
     [DisplayName("Consumer"), InstanceName("Consumer"), TwoLevelCached]
-    [ReadPermission("Administration:General")]
+    [ReadPermission("Ticket:Read")]
     [ModifyPermission("Administration:General")]
-    [LookupScript("PhoneBack.Consumer")]
+    [LookupScript("PhoneBack.Consumer", Permission = "?")]
     public sealed class ConsumerRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
@@ -180,7 +180,6 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.ArchiveDate[this] = value; }
         }
 
-        
         [DisplayName("Consumer Status Caption"), Expression("jConsumerStatus.[Caption]")]
         public String ConsumerStatusCaption
         {

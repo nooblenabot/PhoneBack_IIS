@@ -17,11 +17,11 @@ namespace PhoneBack_IIS.PhoneBack.Columns
         public Int64 Id { get; set; }
         public String IdentityConsumerSurname { get; set; }
         public DateTime CreateDate { get; set; }
-        public Int32 CreateUserId { get; set; }
+        public Int32 CreateUsername { get; set; }
         public DateTime UpdateDate { get; set; }
-        public Int32 UpdateUserId { get; set; }
+        public Int32 UpdateUsername { get; set; }
         public DateTime CloseDate { get; set; }
-        public Int32 CloseUserId { get; set; }
+        public Int32 CloseUsername { get; set; }
         public String StatusCaption { get; set; }
         public String PriorityCaption { get; set; }
         public String CategoryCaption { get; set; }

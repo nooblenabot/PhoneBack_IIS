@@ -1,5 +1,741 @@
-﻿/// <reference types="jquery" />
-/// <reference types="jqueryui" />
+﻿/// <reference types="jqueryui" />
+/// <reference types="jquery" />
+declare namespace PhoneBack_IIS.PhoneBack {
+    class UsersDialog extends Serenity.EntityDialog<UsersRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: UsersForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class UsersGrid extends Serenity.EntityGrid<UsersRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UsersDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class TicketCommentDialog extends Serenity.EntityDialog<TicketCommentRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: TicketCommentForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class TicketCommentGrid extends Serenity.EntityGrid<TicketCommentRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TicketCommentDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class TicketDialog extends Serenity.EntityDialog<TicketRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: TicketForm;
+        protected updateInterface(): void;
+        protected getEntityTitle(): string;
+        protected updateTitle(): void;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class TicketGrid extends Serenity.EntityGrid<TicketRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TicketDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected addButtonClick(): void;
+        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SettSoftwareDialog extends Serenity.EntityDialog<SettSoftwareRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SettSoftwareForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SettSoftwareGrid extends Serenity.EntityGrid<SettSoftwareRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SettSoftwareDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected addButtonClick(): void;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetTicketstatusDialog extends Serenity.EntityDialog<SetTicketstatusRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetTicketstatusForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetTicketstatusGrid extends Serenity.EntityGrid<SetTicketstatusRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetTicketstatusDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetPriorityticketDialog extends Serenity.EntityDialog<SetPriorityticketRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetPriorityticketForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetPriorityticketGrid extends Serenity.EntityGrid<SetPriorityticketRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetPriorityticketDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetMycompanyDialog extends Serenity.EntityDialog<SetMycompanyRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetMycompanyForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetMycompanyGrid extends Serenity.EntityGrid<SetMycompanyRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetMycompanyDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetCountryDialog extends Serenity.EntityDialog<SetCountryRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetCountryForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetCountryGrid extends Serenity.EntityGrid<SetCountryRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetCountryDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetConsumerstatusDialog extends Serenity.EntityDialog<SetConsumerstatusRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetConsumerstatusForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetConsumerstatusGrid extends Serenity.EntityGrid<SetConsumerstatusRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetConsumerstatusDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetCityDialog extends Serenity.EntityDialog<SetCityRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetCityForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetCityGrid extends Serenity.EntityGrid<SetCityRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetCityDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetCatgticketDialog extends Serenity.EntityDialog<SetCatgticketRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetCatgticketForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetCatgticketGrid extends Serenity.EntityGrid<SetCatgticketRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetCatgticketDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetBussdivDialog extends Serenity.EntityDialog<SetBussdivRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SetBussdivForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class SetBussdivGrid extends Serenity.EntityGrid<SetBussdivRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SetBussdivDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class PersonDialog extends Serenity.EntityDialog<PersonRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: PersonForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class PersonGrid extends Serenity.EntityGrid<PersonRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PersonDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class ConsumerDialog extends Serenity.EntityDialog<ConsumerRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ConsumerForm;
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
+    class ConsumerGrid extends Serenity.EntityGrid<ConsumerRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ConsumerDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.Membership {
+    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.Membership {
+    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.Membership {
+    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.Membership {
+    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PhoneBack_IIS.LanguageList {
+    function getValue(): string[][];
+}
+declare namespace PhoneBack_IIS.ScriptInitialization {
+}
+declare namespace PhoneBack_IIS.Common {
+    class UserPreferenceStorage implements Serenity.SettingStorage {
+        getItem(key: string): string;
+        setItem(key: string, data: string): void;
+    }
+}
+declare var jsPDF: any;
+declare namespace PhoneBack_IIS.Common {
+    interface PdfExportOptions {
+        grid: Serenity.DataGrid<any, any>;
+        onViewSubmit: () => boolean;
+        title?: string;
+        hint?: string;
+        separator?: boolean;
+        reportTitle?: string;
+        titleTop?: number;
+        titleFontSize?: number;
+        fileName?: string;
+        pageNumbers?: boolean;
+        columnTitles?: {
+            [key: string]: string;
+        };
+        tableOptions?: jsPDF.AutoTableOptions;
+        output?: string;
+        autoPrint?: boolean;
+        printDateTimeHeader?: boolean;
+    }
+    namespace PdfExportHelper {
+        function exportToPdf(options: PdfExportOptions): void;
+        function createToolButton(options: PdfExportOptions): Serenity.ToolButton;
+    }
+}
+declare var jsPDF: any;
+declare namespace PhoneBack_IIS.Common {
+    class ReportDialog extends Serenity.TemplatedDialog<ReportDialogOptions> {
+        private report;
+        private propertyGrid;
+        constructor(options: ReportDialogOptions);
+        protected getDialogButtons(): any;
+        protected createPropertyGrid(): void;
+        protected loadReport(reportKey: string): void;
+        protected updateInterface(): void;
+        executeReport(target: string, ext: string, download: boolean): void;
+        getToolbarButtons(): {
+            title: string;
+            cssClass: string;
+            onClick: () => void;
+        }[];
+    }
+    interface ReportDialogOptions {
+        reportKey: string;
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    interface ReportExecuteOptions {
+        reportKey: string;
+        download?: boolean;
+        extension?: 'pdf' | 'htm' | 'html' | 'xlsx' | 'docx';
+        getParams?: () => any;
+        params?: {
+            [key: string]: any;
+        };
+        target?: string;
+    }
+    interface ReportButtonOptions extends ReportExecuteOptions {
+        title?: string;
+        cssClass?: string;
+        icon?: string;
+    }
+    namespace ReportHelper {
+        function createToolButton(options: ReportButtonOptions): Serenity.ToolButton;
+        function execute(options: ReportExecuteOptions): void;
+    }
+}
+declare var jsPDF: any;
+declare namespace PhoneBack_IIS.Common {
+    class ReportPage extends Serenity.Widget<any> {
+        private reportKey;
+        private propertyItems;
+        private propertyGrid;
+        constructor(element: JQuery);
+        protected updateMatchFlags(text: string): void;
+        protected categoryClick(e: any): void;
+        protected reportLinkClick(e: any): void;
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    class LanguageSelection extends Serenity.Widget<any> {
+        constructor(select: JQuery, currentLanguage: string);
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    class SidebarSearch extends Serenity.Widget<any> {
+        private menuUL;
+        constructor(input: JQuery, menuUL: JQuery);
+        protected updateMatchFlags(text: string): void;
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    class ThemeSelection extends Serenity.Widget<any> {
+        constructor(select: JQuery);
+        protected getCurrentTheme(): string;
+    }
+}
+declare namespace PhoneBack_IIS {
+    class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
+        constructor();
+        cancelled: boolean;
+        max: number;
+        value: number;
+        title: string;
+        cancelTitle: string;
+        getDialogOptions(): JQueryUI.DialogOptions;
+        initDialog(): void;
+        getTemplate(): string;
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    class BulkServiceAction {
+        protected keys: string[];
+        protected queue: string[];
+        protected queueIndex: number;
+        protected progressDialog: BasicProgressDialog;
+        protected pendingRequests: number;
+        protected completedRequests: number;
+        protected errorByKey: Q.Dictionary<Serenity.ServiceError>;
+        private successCount;
+        private errorCount;
+        done: () => void;
+        protected createProgressDialog(): void;
+        protected getConfirmationFormat(): string;
+        protected getConfirmationMessage(targetCount: any): string;
+        protected confirm(targetCount: any, action: any): void;
+        protected getNothingToProcessMessage(): string;
+        protected nothingToProcess(): void;
+        protected getParallelRequests(): number;
+        protected getBatchSize(): number;
+        protected startParallelExecution(): void;
+        protected serviceCallCleanup(): void;
+        protected executeForBatch(batch: string[]): void;
+        protected executeNextBatch(): void;
+        protected getAllHadErrorsFormat(): string;
+        protected showAllHadErrors(): void;
+        protected getSomeHadErrorsFormat(): string;
+        protected showSomeHadErrors(): void;
+        protected getAllSuccessFormat(): string;
+        protected showAllSuccess(): void;
+        protected showResults(): void;
+        execute(keys: string[]): void;
+        get_successCount(): any;
+        set_successCount(value: number): void;
+        get_errorCount(): any;
+        set_errorCount(value: number): void;
+    }
+}
+declare namespace PhoneBack_IIS.DialogUtils {
+    function pendingChangesConfirmation(element: JQuery, hasPendingChanges: () => boolean): void;
+}
+declare namespace PhoneBack_IIS.Common {
+    class EnumSelectFormatter implements Slick.Formatter {
+        constructor();
+        format(ctx: Slick.FormatterContext): string;
+        enumKey: string;
+        allowClear: boolean;
+        emptyItemText: string;
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    interface ExcelExportOptions {
+        grid: Serenity.DataGrid<any, any>;
+        service: string;
+        onViewSubmit: () => boolean;
+        title?: string;
+        hint?: string;
+        separator?: boolean;
+    }
+    namespace ExcelExportHelper {
+        function createToolButton(options: ExcelExportOptions): Serenity.ToolButton;
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    class GridEditorBase<TEntity> extends Serenity.EntityGrid<TEntity, any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
+        protected getIdProperty(): string;
+        protected nextId: number;
+        constructor(container: JQuery);
+        protected id(entity: TEntity): any;
+        protected getNextId(): string;
+        protected setNewId(entity: TEntity): void;
+        protected save(opt: Serenity.ServiceOptions<any>, callback: (r: Serenity.ServiceResponse) => void): void;
+        protected deleteEntity(id: number): boolean;
+        protected validateEntity(row: TEntity, id: number): boolean;
+        protected setEntities(items: TEntity[]): void;
+        protected getNewEntity(): TEntity;
+        protected getButtons(): Serenity.ToolButton[];
+        protected editItem(entityOrId: any): void;
+        getEditValue(property: any, target: any): void;
+        setEditValue(source: any, property: any): void;
+        value: TEntity[];
+        protected getGridCanLoad(): boolean;
+        protected usePager(): boolean;
+        protected getInitialTitle(): any;
+        protected createQuickSearchInput(): void;
+    }
+}
+declare namespace PhoneBack_IIS.Common {
+    class GridEditorDialog<TEntity> extends Serenity.EntityDialog<TEntity, any> {
+        protected getIdProperty(): string;
+        onSave: (options: Serenity.ServiceOptions<Serenity.SaveResponse>, callback: (response: Serenity.SaveResponse) => void) => void;
+        onDelete: (options: Serenity.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void) => void;
+        destroy(): void;
+        protected updateInterface(): void;
+        protected saveHandler(options: Serenity.ServiceOptions<Serenity.SaveResponse>, callback: (response: Serenity.SaveResponse) => void): void;
+        protected deleteHandler(options: Serenity.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void): void;
+    }
+}
+declare namespace PhoneBack_IIS {
+    /**
+     * This is an editor widget but it only displays a text, not edits it.
+     *
+     */
+    class StaticTextBlock extends Serenity.Widget<StaticTextBlockOptions> implements Serenity.ISetEditValue {
+        private value;
+        constructor(container: JQuery, options: StaticTextBlockOptions);
+        private updateElementContent();
+        /**
+         * By implementing ISetEditValue interface, we allow this editor to display its field value.
+         * But only do this when our text content is not explicitly set in options
+         */
+        setEditValue(source: any, property: Serenity.PropertyItem): void;
+    }
+    interface StaticTextBlockOptions {
+        text: string;
+        isHtml: boolean;
+        isLocalText: boolean;
+        hideLabel: boolean;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class RoleCheckEditor extends Serenity.CheckTreeEditor<Serenity.CheckTreeItem<any>, any> {
+        private searchText;
+        constructor(div: JQuery);
+        protected createToolbarExtensions(): void;
+        protected getButtons(): any[];
+        protected getTreeItems(): Serenity.CheckTreeItem<any>[];
+        protected onViewFilter(item: any): boolean;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class UserRoleDialog extends Serenity.TemplatedDialog<UserRoleDialogOptions> {
+        private permissions;
+        constructor(opt: UserRoleDialogOptions);
+        protected getDialogOptions(): JQueryUI.DialogOptions;
+        protected getTemplate(): string;
+    }
+    interface UserRoleDialogOptions {
+        userID: number;
+        username: string;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
+        protected getIdProperty(): string;
+        private searchText;
+        private byParentKey;
+        constructor(container: JQuery, opt: PermissionCheckEditorOptions);
+        private getItemGrantRevokeClass(item, grant);
+        private roleOrImplicit(key);
+        private getItemEffectiveClass(item);
+        protected getColumns(): Slick.Column[];
+        setItems(items: PermissionCheckItem[]): void;
+        protected onViewSubmit(): boolean;
+        protected onViewFilter(item: PermissionCheckItem): boolean;
+        private matchContains(item);
+        private getDescendants(item, excludeGroups);
+        protected onClick(e: any, row: any, cell: any): void;
+        private getParentKey(key);
+        protected getButtons(): Serenity.ToolButton[];
+        protected createToolbarExtensions(): void;
+        private getSortedGroupAndPermissionKeys(titleByKey);
+        value: UserPermissionRow[];
+        private _rolePermissions;
+        rolePermissions: string[];
+        private _implicitPermissions;
+        implicitPermissions: Q.Dictionary<string[]>;
+    }
+    interface PermissionCheckEditorOptions {
+        showRevoke?: boolean;
+    }
+    interface PermissionCheckItem {
+        ParentKey?: string;
+        Key?: string;
+        Title?: string;
+        IsGroup?: boolean;
+        GrantRevoke?: boolean;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class UserPermissionDialog extends Serenity.TemplatedDialog<UserPermissionDialogOptions> {
+        private permissions;
+        constructor(opt: UserPermissionDialogOptions);
+        protected getDialogOptions(): JQueryUI.DialogOptions;
+        protected getTemplate(): string;
+    }
+    interface UserPermissionDialogOptions {
+        userID?: number;
+        username?: string;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class UserDialog extends Serenity.EntityDialog<UserRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getIsActiveProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: UserForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
+        protected updateInterface(): void;
+        protected afterLoadEntity(): void;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class UserGrid extends Serenity.EntityGrid<UserRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UserDialog;
+        protected getIdProperty(): string;
+        protected getIsActiveProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getDefaultSortBy(): string[];
+    }
+}
+declare namespace PhoneBack_IIS.Authorization {
+    let userDefinition: ScriptUserDefinition;
+    function hasPermission(permissionKey: string): boolean;
+}
+declare namespace PhoneBack_IIS.Administration {
+    class TranslationGrid extends Serenity.EntityGrid<TranslationItem, any> {
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        private hasChanges;
+        private searchText;
+        private sourceLanguage;
+        private targetLanguage;
+        private targetLanguageKey;
+        constructor(container: JQuery);
+        protected onClick(e: JQueryEventObject, row: number, cell: number): any;
+        protected getColumns(): Slick.Column[];
+        protected createToolbarExtensions(): void;
+        protected saveChanges(language: string): PromiseLike<any>;
+        protected onViewSubmit(): boolean;
+        protected getButtons(): Serenity.ToolButton[];
+        protected createQuickSearchInput(): void;
+        protected onViewFilter(item: TranslationItem): boolean;
+        protected usePager(): boolean;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class RolePermissionDialog extends Serenity.TemplatedDialog<RolePermissionDialogOptions> {
+        private permissions;
+        constructor(opt: RolePermissionDialogOptions);
+        protected getDialogOptions(): JQueryUI.DialogOptions;
+        protected getTemplate(): string;
+    }
+    interface RolePermissionDialogOptions {
+        roleID?: number;
+        title?: string;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class RoleDialog extends Serenity.EntityDialog<RoleRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RoleForm;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+        protected updateInterface(): void;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class RoleGrid extends Serenity.EntityGrid<RoleRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RoleDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getDefaultSortBy(): string[];
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: LanguageForm;
+    }
+}
+declare namespace PhoneBack_IIS.Administration {
+    class LanguageGrid extends Serenity.EntityGrid<LanguageRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof LanguageDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getDefaultSortBy(): string[];
+    }
+}
 declare namespace PhoneBack_IIS.Administration {
 }
 declare namespace PhoneBack_IIS.Administration {
@@ -638,6 +1374,12 @@ declare namespace PhoneBack_IIS.PhoneBack {
     }
 }
 declare namespace PhoneBack_IIS.PhoneBack {
+    enum Gender {
+        Male = 1,
+        Female = 2,
+    }
+}
+declare namespace PhoneBack_IIS.PhoneBack {
 }
 declare namespace PhoneBack_IIS.PhoneBack {
     class PersonForm extends Serenity.PrefixedContext {
@@ -654,7 +1396,7 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Name: Serenity.StringEditor;
         MaidenName: Serenity.StringEditor;
         CorporateId: Serenity.LookupEditor;
-        Sexe: Serenity.IntegerEditor;
+        Sexe: Serenity.EnumEditor;
         Phone: Serenity.StringEditor;
         Gsm: Serenity.StringEditor;
         Email1: Serenity.StringEditor;
@@ -676,13 +1418,15 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Name?: string;
         MaidenName?: string;
         CorporateId?: number;
-        Sexe?: number;
+        Sexe?: Gender;
         Phone?: string;
         Gsm?: string;
         Email1?: string;
         Caption?: string;
         InactiveDate?: string;
         ArchiveDate?: string;
+        FullConsumer?: string;
+        FullName?: string;
         CorporateIsMorale?: boolean;
         CorporateIsActive?: boolean;
         CorporateIsArchive?: boolean;
@@ -708,7 +1452,7 @@ declare namespace PhoneBack_IIS.PhoneBack {
     }
     namespace PersonRow {
         const idProperty = "Id";
-        const nameProperty = "Surname";
+        const nameProperty = "FullConsumer";
         const localTextPrefix = "PhoneBack.Person";
         const lookupKey = "PhoneBack.Person";
         function getLookup(): Q.Lookup<PersonRow>;
@@ -731,6 +1475,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const Caption: string;
             const InactiveDate: string;
             const ArchiveDate: string;
+            const FullConsumer: string;
+            const FullName: string;
             const CorporateIsMorale: string;
             const CorporateIsActive: string;
             const CorporateIsArchive: string;
@@ -1345,9 +2091,9 @@ declare namespace PhoneBack_IIS.PhoneBack {
         DefaultValue: Serenity.BooleanEditor;
         IsActive: Serenity.BooleanEditor;
         InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
+        InsertUsername: Serenity.StringEditor;
         UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
+        UpdateUsername: Serenity.StringEditor;
         Setting: Serenity.StringEditor;
         Value: Serenity.StringEditor;
         Caption: Serenity.StringEditor;
@@ -1365,6 +2111,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
         Setting?: string;
         Value?: string;
         Caption?: string;
+        InsertUsername?: string;
+        UpdateUsername?: string;
     }
     namespace SettSoftwareRow {
         const idProperty = "Id";
@@ -1383,6 +2131,8 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const Setting: string;
             const Value: string;
             const Caption: string;
+            const InsertUsername: string;
+            const UpdateUsername: string;
         }
     }
 }
@@ -1466,19 +2216,19 @@ declare namespace PhoneBack_IIS.PhoneBack {
         static formKey: string;
     }
     interface TicketForm {
-        IdentityConsumer: Serenity.LookupEditor;
-        CreateDate: Serenity.DateEditor;
-        CreateUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
         CloseDate: Serenity.DateEditor;
         CloseUserId: Serenity.IntegerEditor;
+        CreateDate: Serenity.DateEditor;
+        CreateUsername: Serenity.StringEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUsername: Serenity.StringEditor;
+        IdentityConsumer: Serenity.LookupEditor;
         Status: Serenity.LookupEditor;
         Priority: Serenity.LookupEditor;
         Category: Serenity.LookupEditor;
-        ToUserId: Serenity.IntegerEditor;
+        ToUserId: Serenity.LookupEditor;
         Subject: Serenity.StringEditor;
-        Object: Serenity.StringEditor;
+        Object: Serenity.TextAreaEditor;
     }
 }
 declare namespace PhoneBack_IIS.PhoneBack {
@@ -1511,7 +2261,10 @@ declare namespace PhoneBack_IIS.PhoneBack {
         PriorityColor?: string;
         CategoryCaption?: string;
         ToUserUsername?: string;
-        ToUserDisplayName?: string;
+        CreateUsername?: string;
+        UpdateUsername?: string;
+        CloseUsername?: string;
+        Comment?: TicketCommentRow[];
     }
     namespace TicketRow {
         const idProperty = "Id";
@@ -1548,7 +2301,10 @@ declare namespace PhoneBack_IIS.PhoneBack {
             const PriorityColor: string;
             const CategoryCaption: string;
             const ToUserUsername: string;
-            const ToUserDisplayName: string;
+            const CreateUsername: string;
+            const UpdateUsername: string;
+            const CloseUsername: string;
+            const Comment: string;
         }
     }
 }
@@ -1711,735 +2467,5 @@ declare namespace PhoneBack_IIS {
         Permissions?: {
             [key: string]: boolean;
         };
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: LanguageForm;
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class LanguageGrid extends Serenity.EntityGrid<LanguageRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof LanguageDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        protected getDefaultSortBy(): string[];
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class RoleDialog extends Serenity.EntityDialog<RoleRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: RoleForm;
-        protected getToolbarButtons(): Serenity.ToolButton[];
-        protected updateInterface(): void;
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class RoleGrid extends Serenity.EntityGrid<RoleRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof RoleDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        protected getDefaultSortBy(): string[];
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class RolePermissionDialog extends Serenity.TemplatedDialog<RolePermissionDialogOptions> {
-        private permissions;
-        constructor(opt: RolePermissionDialogOptions);
-        protected getDialogOptions(): JQueryUI.DialogOptions;
-        protected getTemplate(): string;
-    }
-    interface RolePermissionDialogOptions {
-        roleID?: number;
-        title?: string;
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class TranslationGrid extends Serenity.EntityGrid<TranslationItem, any> {
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        private hasChanges;
-        private searchText;
-        private sourceLanguage;
-        private targetLanguage;
-        private targetLanguageKey;
-        constructor(container: JQuery);
-        protected onClick(e: JQueryEventObject, row: number, cell: number): any;
-        protected getColumns(): Slick.Column[];
-        protected createToolbarExtensions(): void;
-        protected saveChanges(language: string): PromiseLike<any>;
-        protected onViewSubmit(): boolean;
-        protected getButtons(): Serenity.ToolButton[];
-        protected createQuickSearchInput(): void;
-        protected onViewFilter(item: TranslationItem): boolean;
-        protected usePager(): boolean;
-    }
-}
-declare namespace PhoneBack_IIS.Authorization {
-    let userDefinition: ScriptUserDefinition;
-    function hasPermission(permissionKey: string): boolean;
-}
-declare namespace PhoneBack_IIS.Administration {
-    class UserDialog extends Serenity.EntityDialog<UserRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getIsActiveProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: UserForm;
-        constructor();
-        protected getToolbarButtons(): Serenity.ToolButton[];
-        protected updateInterface(): void;
-        protected afterLoadEntity(): void;
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class UserGrid extends Serenity.EntityGrid<UserRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof UserDialog;
-        protected getIdProperty(): string;
-        protected getIsActiveProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        protected getDefaultSortBy(): string[];
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
-        protected getIdProperty(): string;
-        private searchText;
-        private byParentKey;
-        constructor(container: JQuery, opt: PermissionCheckEditorOptions);
-        private getItemGrantRevokeClass(item, grant);
-        private roleOrImplicit(key);
-        private getItemEffectiveClass(item);
-        protected getColumns(): Slick.Column[];
-        setItems(items: PermissionCheckItem[]): void;
-        protected onViewSubmit(): boolean;
-        protected onViewFilter(item: PermissionCheckItem): boolean;
-        private matchContains(item);
-        private getDescendants(item, excludeGroups);
-        protected onClick(e: any, row: any, cell: any): void;
-        private getParentKey(key);
-        protected getButtons(): Serenity.ToolButton[];
-        protected createToolbarExtensions(): void;
-        private getSortedGroupAndPermissionKeys(titleByKey);
-        value: UserPermissionRow[];
-        private _rolePermissions;
-        rolePermissions: string[];
-        private _implicitPermissions;
-        implicitPermissions: Q.Dictionary<string[]>;
-    }
-    interface PermissionCheckEditorOptions {
-        showRevoke?: boolean;
-    }
-    interface PermissionCheckItem {
-        ParentKey?: string;
-        Key?: string;
-        Title?: string;
-        IsGroup?: boolean;
-        GrantRevoke?: boolean;
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class UserPermissionDialog extends Serenity.TemplatedDialog<UserPermissionDialogOptions> {
-        private permissions;
-        constructor(opt: UserPermissionDialogOptions);
-        protected getDialogOptions(): JQueryUI.DialogOptions;
-        protected getTemplate(): string;
-    }
-    interface UserPermissionDialogOptions {
-        userID?: number;
-        username?: string;
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class RoleCheckEditor extends Serenity.CheckTreeEditor<Serenity.CheckTreeItem<any>, any> {
-        private searchText;
-        constructor(div: JQuery);
-        protected createToolbarExtensions(): void;
-        protected getButtons(): any[];
-        protected getTreeItems(): Serenity.CheckTreeItem<any>[];
-        protected onViewFilter(item: any): boolean;
-    }
-}
-declare namespace PhoneBack_IIS.Administration {
-    class UserRoleDialog extends Serenity.TemplatedDialog<UserRoleDialogOptions> {
-        private permissions;
-        constructor(opt: UserRoleDialogOptions);
-        protected getDialogOptions(): JQueryUI.DialogOptions;
-        protected getTemplate(): string;
-    }
-    interface UserRoleDialogOptions {
-        userID: number;
-        username: string;
-    }
-}
-declare namespace PhoneBack_IIS {
-    class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
-        constructor();
-        cancelled: boolean;
-        max: number;
-        value: number;
-        title: string;
-        cancelTitle: string;
-        getDialogOptions(): JQueryUI.DialogOptions;
-        initDialog(): void;
-        getTemplate(): string;
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    class BulkServiceAction {
-        protected keys: string[];
-        protected queue: string[];
-        protected queueIndex: number;
-        protected progressDialog: BasicProgressDialog;
-        protected pendingRequests: number;
-        protected completedRequests: number;
-        protected errorByKey: Q.Dictionary<Serenity.ServiceError>;
-        private successCount;
-        private errorCount;
-        done: () => void;
-        protected createProgressDialog(): void;
-        protected getConfirmationFormat(): string;
-        protected getConfirmationMessage(targetCount: any): string;
-        protected confirm(targetCount: any, action: any): void;
-        protected getNothingToProcessMessage(): string;
-        protected nothingToProcess(): void;
-        protected getParallelRequests(): number;
-        protected getBatchSize(): number;
-        protected startParallelExecution(): void;
-        protected serviceCallCleanup(): void;
-        protected executeForBatch(batch: string[]): void;
-        protected executeNextBatch(): void;
-        protected getAllHadErrorsFormat(): string;
-        protected showAllHadErrors(): void;
-        protected getSomeHadErrorsFormat(): string;
-        protected showSomeHadErrors(): void;
-        protected getAllSuccessFormat(): string;
-        protected showAllSuccess(): void;
-        protected showResults(): void;
-        execute(keys: string[]): void;
-        get_successCount(): any;
-        set_successCount(value: number): void;
-        get_errorCount(): any;
-        set_errorCount(value: number): void;
-    }
-}
-declare namespace PhoneBack_IIS.DialogUtils {
-    function pendingChangesConfirmation(element: JQuery, hasPendingChanges: () => boolean): void;
-}
-declare namespace PhoneBack_IIS.Common {
-    class EnumSelectFormatter implements Slick.Formatter {
-        constructor();
-        format(ctx: Slick.FormatterContext): string;
-        enumKey: string;
-        allowClear: boolean;
-        emptyItemText: string;
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    interface ExcelExportOptions {
-        grid: Serenity.DataGrid<any, any>;
-        service: string;
-        onViewSubmit: () => boolean;
-        title?: string;
-        hint?: string;
-        separator?: boolean;
-    }
-    namespace ExcelExportHelper {
-        function createToolButton(options: ExcelExportOptions): Serenity.ToolButton;
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    class GridEditorBase<TEntity> extends Serenity.EntityGrid<TEntity, any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
-        protected getIdProperty(): string;
-        protected nextId: number;
-        constructor(container: JQuery);
-        protected id(entity: TEntity): any;
-        protected getNextId(): string;
-        protected setNewId(entity: TEntity): void;
-        protected save(opt: Serenity.ServiceOptions<any>, callback: (r: Serenity.ServiceResponse) => void): void;
-        protected deleteEntity(id: number): boolean;
-        protected validateEntity(row: TEntity, id: number): boolean;
-        protected setEntities(items: TEntity[]): void;
-        protected getNewEntity(): TEntity;
-        protected getButtons(): Serenity.ToolButton[];
-        protected editItem(entityOrId: any): void;
-        getEditValue(property: any, target: any): void;
-        setEditValue(source: any, property: any): void;
-        value: TEntity[];
-        protected getGridCanLoad(): boolean;
-        protected usePager(): boolean;
-        protected getInitialTitle(): any;
-        protected createQuickSearchInput(): void;
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    class GridEditorDialog<TEntity> extends Serenity.EntityDialog<TEntity, any> {
-        protected getIdProperty(): string;
-        onSave: (options: Serenity.ServiceOptions<Serenity.SaveResponse>, callback: (response: Serenity.SaveResponse) => void) => void;
-        onDelete: (options: Serenity.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void) => void;
-        destroy(): void;
-        protected updateInterface(): void;
-        protected saveHandler(options: Serenity.ServiceOptions<Serenity.SaveResponse>, callback: (response: Serenity.SaveResponse) => void): void;
-        protected deleteHandler(options: Serenity.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void): void;
-    }
-}
-declare namespace PhoneBack_IIS.LanguageList {
-    function getValue(): string[][];
-}
-declare namespace PhoneBack_IIS {
-    /**
-     * This is an editor widget but it only displays a text, not edits it.
-     *
-     */
-    class StaticTextBlock extends Serenity.Widget<StaticTextBlockOptions> implements Serenity.ISetEditValue {
-        private value;
-        constructor(container: JQuery, options: StaticTextBlockOptions);
-        private updateElementContent();
-        /**
-         * By implementing ISetEditValue interface, we allow this editor to display its field value.
-         * But only do this when our text content is not explicitly set in options
-         */
-        setEditValue(source: any, property: Serenity.PropertyItem): void;
-    }
-    interface StaticTextBlockOptions {
-        text: string;
-        isHtml: boolean;
-        isLocalText: boolean;
-        hideLabel: boolean;
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    class LanguageSelection extends Serenity.Widget<any> {
-        constructor(select: JQuery, currentLanguage: string);
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    class SidebarSearch extends Serenity.Widget<any> {
-        private menuUL;
-        constructor(input: JQuery, menuUL: JQuery);
-        protected updateMatchFlags(text: string): void;
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    class ThemeSelection extends Serenity.Widget<any> {
-        constructor(select: JQuery);
-        protected getCurrentTheme(): string;
-    }
-}
-declare var jsPDF: any;
-declare namespace PhoneBack_IIS.Common {
-    interface PdfExportOptions {
-        grid: Serenity.DataGrid<any, any>;
-        onViewSubmit: () => boolean;
-        title?: string;
-        hint?: string;
-        separator?: boolean;
-        reportTitle?: string;
-        titleTop?: number;
-        titleFontSize?: number;
-        fileName?: string;
-        pageNumbers?: boolean;
-        columnTitles?: {
-            [key: string]: string;
-        };
-        tableOptions?: jsPDF.AutoTableOptions;
-        output?: string;
-        autoPrint?: boolean;
-        printDateTimeHeader?: boolean;
-    }
-    namespace PdfExportHelper {
-        function exportToPdf(options: PdfExportOptions): void;
-        function createToolButton(options: PdfExportOptions): Serenity.ToolButton;
-    }
-}
-declare var jsPDF: any;
-declare namespace PhoneBack_IIS.Common {
-    class ReportDialog extends Serenity.TemplatedDialog<ReportDialogOptions> {
-        private report;
-        private propertyGrid;
-        constructor(options: ReportDialogOptions);
-        protected getDialogButtons(): any;
-        protected createPropertyGrid(): void;
-        protected loadReport(reportKey: string): void;
-        protected updateInterface(): void;
-        executeReport(target: string, ext: string, download: boolean): void;
-        getToolbarButtons(): {
-            title: string;
-            cssClass: string;
-            onClick: () => void;
-        }[];
-    }
-    interface ReportDialogOptions {
-        reportKey: string;
-    }
-}
-declare namespace PhoneBack_IIS.Common {
-    interface ReportExecuteOptions {
-        reportKey: string;
-        download?: boolean;
-        extension?: 'pdf' | 'htm' | 'html' | 'xlsx' | 'docx';
-        getParams?: () => any;
-        params?: {
-            [key: string]: any;
-        };
-        target?: string;
-    }
-    interface ReportButtonOptions extends ReportExecuteOptions {
-        title?: string;
-        cssClass?: string;
-        icon?: string;
-    }
-    namespace ReportHelper {
-        function createToolButton(options: ReportButtonOptions): Serenity.ToolButton;
-        function execute(options: ReportExecuteOptions): void;
-    }
-}
-declare var jsPDF: any;
-declare namespace PhoneBack_IIS.Common {
-    class ReportPage extends Serenity.Widget<any> {
-        private reportKey;
-        private propertyItems;
-        private propertyGrid;
-        constructor(element: JQuery);
-        protected updateMatchFlags(text: string): void;
-        protected categoryClick(e: any): void;
-        protected reportLinkClick(e: any): void;
-    }
-}
-declare namespace PhoneBack_IIS.ScriptInitialization {
-}
-declare namespace PhoneBack_IIS.Common {
-    class UserPreferenceStorage implements Serenity.SettingStorage {
-        getItem(key: string): string;
-        setItem(key: string, data: string): void;
-    }
-}
-declare namespace PhoneBack_IIS.Membership {
-    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.Membership {
-    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.Membership {
-    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.Membership {
-    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class ConsumerDialog extends Serenity.EntityDialog<ConsumerRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: ConsumerForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class ConsumerGrid extends Serenity.EntityGrid<ConsumerRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof ConsumerDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class PersonDialog extends Serenity.EntityDialog<PersonRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: PersonForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class PersonGrid extends Serenity.EntityGrid<PersonRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof PersonDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetBussdivDialog extends Serenity.EntityDialog<SetBussdivRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetBussdivForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetBussdivGrid extends Serenity.EntityGrid<SetBussdivRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetBussdivDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetCatgticketDialog extends Serenity.EntityDialog<SetCatgticketRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetCatgticketForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetCatgticketGrid extends Serenity.EntityGrid<SetCatgticketRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetCatgticketDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetCityDialog extends Serenity.EntityDialog<SetCityRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetCityForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetCityGrid extends Serenity.EntityGrid<SetCityRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetCityDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetConsumerstatusDialog extends Serenity.EntityDialog<SetConsumerstatusRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetConsumerstatusForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetConsumerstatusGrid extends Serenity.EntityGrid<SetConsumerstatusRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetConsumerstatusDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetCountryDialog extends Serenity.EntityDialog<SetCountryRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetCountryForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetCountryGrid extends Serenity.EntityGrid<SetCountryRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetCountryDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetMycompanyDialog extends Serenity.EntityDialog<SetMycompanyRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetMycompanyForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetMycompanyGrid extends Serenity.EntityGrid<SetMycompanyRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetMycompanyDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetPriorityticketDialog extends Serenity.EntityDialog<SetPriorityticketRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetPriorityticketForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetPriorityticketGrid extends Serenity.EntityGrid<SetPriorityticketRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetPriorityticketDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetTicketstatusDialog extends Serenity.EntityDialog<SetTicketstatusRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SetTicketstatusForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SetTicketstatusGrid extends Serenity.EntityGrid<SetTicketstatusRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SetTicketstatusDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SettSoftwareDialog extends Serenity.EntityDialog<SettSoftwareRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: SettSoftwareForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class SettSoftwareGrid extends Serenity.EntityGrid<SettSoftwareRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SettSoftwareDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class TicketDialog extends Serenity.EntityDialog<TicketRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: TicketForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class TicketGrid extends Serenity.EntityGrid<TicketRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof TicketDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class TicketCommentDialog extends Serenity.EntityDialog<TicketCommentRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: TicketCommentForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class TicketCommentGrid extends Serenity.EntityGrid<TicketCommentRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof TicketCommentDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class UsersDialog extends Serenity.EntityDialog<UsersRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: UsersForm;
-    }
-}
-declare namespace PhoneBack_IIS.PhoneBack {
-    class UsersGrid extends Serenity.EntityGrid<UsersRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof UsersDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
     }
 }

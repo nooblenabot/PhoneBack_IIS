@@ -28,7 +28,10 @@
         PriorityColor?: string;
         CategoryCaption?: string;
         ToUserUsername?: string;
-        ToUserDisplayName?: string;
+        CreateUsername?: string;
+        UpdateUsername?: string;
+        CloseUsername?: string;
+        Comment?: TicketCommentRow[];
     }
 
     export namespace TicketRow {
@@ -70,7 +73,10 @@
             export declare const PriorityColor: string;
             export declare const CategoryCaption: string;
             export declare const ToUserUsername: string;
-            export declare const ToUserDisplayName: string;
+            export declare const CreateUsername: string;
+            export declare const UpdateUsername: string;
+            export declare const CloseUsername: string;
+            export declare const Comment: string;
         }
 
         [
@@ -102,7 +108,10 @@
             'PriorityColor', 
             'CategoryCaption', 
             'ToUserUsername', 
-            'ToUserDisplayName'
+            'CreateUsername', 
+            'UpdateUsername', 
+            'CloseUsername', 
+            'Comment'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

@@ -9,22 +9,31 @@ namespace PhoneBack_IIS.PhoneBack.Forms
     using System.Collections.Generic;
     using System.IO;
 
+    
+
     [FormScript("PhoneBack.Ticket")]
     [BasedOnRow(typeof(Entities.TicketRow))]
     public class TicketForm
     {
-        public Int64 IdentityConsumer { get; set; }
-        public DateTime CreateDate { get; set; }
-        public Int32 CreateUserId { get; set; }
-        public DateTime UpdateDate { get; set; }
-        public Int32 UpdateUserId { get; set; }
+        [HalfWidth,HideOnUpdate]
         public DateTime CloseDate { get; set; }
+        [HalfWidth,HideOnUpdate]
         public Int32 CloseUserId { get; set; }
+        [DateTimeFormatter, QuarterWidth]
+        public DateTime CreateDate { get; set; }
+        [QuarterWidth]
+        public String CreateUsername { get; set; }
+        [Updatable(false), QuarterWidth, DateTimeFormatter]
+        public DateTime UpdateDate { get; set; }
+        [Updatable(false), QuarterWidth]
+        public String UpdateUsername { get; set; }
+        public Int64 IdentityConsumer { get; set; }
         public Int16 Status { get; set; }
         public Int16 Priority { get; set; }
         public Int16 Category { get; set; }
         public Int32 ToUserId { get; set; }
         public String Subject { get; set; }
         public String Object { get; set; }
+       
     }
 }

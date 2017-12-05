@@ -21,12 +21,13 @@ namespace PhoneBack_IIS.PhoneBack.Columns
         public Int32 InsertUserId { get; set; }
         public DateTime UpdateDate { get; set; }
         public Int32 UpdateUserId { get; set; }
+        public String FullConsumer { get; set; }
         [EditLink]
         public String Surname { get; set; }
         public String Name { get; set; }
         public String MaidenName { get; set; }
         public String CorporateCorporateName { get; set; }
-        public Int16 Sexe { get; set; }
+        public Gender Sexe { get; set; }
         public String Phone { get; set; }
         public String Gsm { get; set; }
         public String Email1 { get; set; }
