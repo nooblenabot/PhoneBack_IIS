@@ -12,5 +12,19 @@ namespace PhoneBack_IIS.PhoneBack {
 
         protected form = new ConsumerForm(this.idPrefix);
 
+        constructor() {
+            super();
+
+        //    this.form.IsMorale.change(e => {
+        //        if (this.form.IsMorale.value = true)
+        //            Serenity.EditorUtils.setReadOnly(this.form.ConsumerName, true);
+
+        //        if (this.form.IsMorale.value = false)
+        //            // Set read only to false for a field
+        //            Serenity.EditorUtils.setReadOnly(this.form.CorporateName, true);
+        //    }
+        //    );
+        }
+
     }
 }

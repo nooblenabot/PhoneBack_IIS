@@ -31,6 +31,7 @@ namespace PhoneBack_IIS.PhoneBack.Forms
         public Int16 Status { get; set; }
         public Int16 Priority { get; set; }
         public Int16 Category { get; set; }
+        public Int16 ToDepartmentId { get; set; }
         public Int32 ToUserId { get; set; }
         public String Subject { get; set; }
         public String Object { get; set; }

@@ -26,7 +26,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Identity Consumer"), ForeignKey("[dbo].[PERSON]", "Id"), LeftJoin("jIdentityConsumer"), TextualField("FullIdentityConsumer")]
-        [LookupEditor(typeof(PersonRow), MinimumResultsForSearch = 1, InplaceAdd = false)]
+        [LookupEditor(typeof(PersonRow), MinimumResultsForSearch = 1, InplaceAdd = false, FilterField = "IsArchive", FilterValue = true)]
         public Int64? IdentityConsumer
         {
             get { return Fields.IdentityConsumer[this]; }
@@ -97,6 +97,14 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         {
             get { return Fields.Category[this]; }
             set { Fields.Category[this] = value; }
+        }
+
+        [DisplayName("Department"), NotNull, ForeignKey("[dbo].[SET_BUSSDIV]", "Id"), LeftJoin("jToDepartmentId"), TextualField("ToDepartmentIdCaption")]
+        [LookupEditor(typeof(SetBussdivRow), MinimumResultsForSearch = -1, InplaceAdd = false, FilterField = "IsActive", FilterValue = 1)]
+        public Int16? ToDepartmentId
+        {
+            get { return Fields.ToDepartmentId[this]; }
+            set { Fields.ToDepartmentId[this] = value; }
         }
 
         [DisplayName("To User"),NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jToUser"), TextualField("ToUserUsername")]
@@ -208,11 +216,18 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.PriorityColor[this] = value; }
         }
 
-        [DisplayName("Category Caption"), Expression("jCategory.[Caption]")]
+        [DisplayName("Category"), Expression("jCategory.[Caption]")]
         public String CategoryCaption
         {
             get { return Fields.CategoryCaption[this]; }
             set { Fields.CategoryCaption[this] = value; }
+        }
+
+        [DisplayName("Department"), Expression("jToDepartmentId.[Caption]")]
+        public String ToDepartmentIdCaption
+        {
+            get { return Fields.ToDepartmentIdCaption[this]; }
+            set { Fields.ToDepartmentIdCaption[this] = value; }
         }
 
         [DisplayName("To User Username"), Expression("jToUser.[Username]")]
@@ -280,6 +295,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             public Int16Field Status;
             public Int16Field Priority;
             public Int16Field Category;
+            public Int16Field ToDepartmentId;
             public Int32Field ToUserId;
             public StringField Subject;
             public StringField Object;
@@ -300,6 +316,8 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             public StringField PriorityColor;
 
             public StringField CategoryCaption;
+
+            public StringField ToDepartmentIdCaption;
 
             public StringField ToUserUsername;
 

@@ -160,7 +160,6 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.FullName[this] = value; }
         }
 
-
         [DisplayName("Corporate Is Morale"), Expression("jCorporate.[IsMorale]")]
         public Boolean? CorporateIsMorale
         {
@@ -355,6 +354,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
 
             public StringField FullConsumer;
             public StringField FullName;
+            //public StringField SexeAbbr;
 
             public BooleanField CorporateIsMorale;
             public BooleanField CorporateIsActive;

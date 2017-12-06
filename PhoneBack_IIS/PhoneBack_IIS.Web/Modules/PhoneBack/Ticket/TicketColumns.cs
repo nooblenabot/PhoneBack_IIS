@@ -25,6 +25,7 @@ namespace PhoneBack_IIS.PhoneBack.Columns
         public String StatusCaption { get; set; }
         public String PriorityCaption { get; set; }
         public String CategoryCaption { get; set; }
+        public String ToDepartmentIdCaption { get; set; }
         public String ToUserUsername { get; set; }
         [EditLink]
         public String Subject { get; set; }

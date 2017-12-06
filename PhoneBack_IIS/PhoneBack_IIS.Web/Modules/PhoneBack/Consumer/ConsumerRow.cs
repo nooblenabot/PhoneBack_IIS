@@ -23,7 +23,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Is Morale"), NotNull]
+        [DisplayName("Is Morale"), NotNull,Updatable(false)]
         public Boolean? IsMorale
         {
             get { return Fields.IsMorale[this]; }

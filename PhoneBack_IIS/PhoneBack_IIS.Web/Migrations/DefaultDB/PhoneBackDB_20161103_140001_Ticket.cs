@@ -21,6 +21,7 @@ namespace PhoneBack_IIS.Migrations.PhoneBackDB
                 .WithColumn("Status").AsInt16().Nullable()
                 .WithColumn("Priority").AsInt16().Nullable()
                 .WithColumn("Category").AsInt16().Nullable()
+                .WithColumn("ToDepartmentId").AsInt16().Nullable()
                 .WithColumn("ToUserId").AsInt32().Nullable()
                 .WithColumn("Subject").AsString(100).Nullable()
                 .WithColumn("Object").AsString(2000).Nullable()
@@ -41,6 +42,8 @@ namespace PhoneBack_IIS.Migrations.PhoneBackDB
             Create.ForeignKey("FK_TICKET_CATEGORY").FromTable("TICKET").ForeignColumn("Category").ToTable("SET_CATGTICKET").PrimaryColumn("Id");
             Create.ForeignKey("FK_TICKET_TOUSER").FromTable("TICKET").ForeignColumn("ToUserId").ToTable("Users").PrimaryColumn("UserId");
             Create.ForeignKey("FK_TICKET_CONSUMER").FromTable("TICKET").ForeignColumn("IdentityConsumer").ToTable("PERSON").PrimaryColumn("Id");
+            Create.ForeignKey("FK_TICKET_DEPARTMENT").FromTable("TICKET").ForeignColumn("ToDepartmentId").ToTable("SET_BUSSDIV").PrimaryColumn("Id");
+            
 
         }
     }

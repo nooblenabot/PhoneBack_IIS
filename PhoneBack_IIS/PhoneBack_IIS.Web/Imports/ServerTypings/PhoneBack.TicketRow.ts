@@ -11,6 +11,7 @@
         Status?: number;
         Priority?: number;
         Category?: number;
+        ToDepartmentId?: number;
         ToUserId?: number;
         Subject?: string;
         Object?: string;
@@ -27,6 +28,7 @@
         PriorityCaption?: string;
         PriorityColor?: string;
         CategoryCaption?: string;
+        ToDepartmentIdCaption?: string;
         ToUserUsername?: string;
         CreateUsername?: string;
         UpdateUsername?: string;
@@ -56,6 +58,7 @@
             export declare const Status: string;
             export declare const Priority: string;
             export declare const Category: string;
+            export declare const ToDepartmentId: string;
             export declare const ToUserId: string;
             export declare const Subject: string;
             export declare const Object: string;
@@ -72,6 +75,7 @@
             export declare const PriorityCaption: string;
             export declare const PriorityColor: string;
             export declare const CategoryCaption: string;
+            export declare const ToDepartmentIdCaption: string;
             export declare const ToUserUsername: string;
             export declare const CreateUsername: string;
             export declare const UpdateUsername: string;
@@ -91,6 +95,7 @@
             'Status', 
             'Priority', 
             'Category', 
+            'ToDepartmentId', 
             'ToUserId', 
             'Subject', 
             'Object', 
@@ -107,6 +112,7 @@
             'PriorityCaption', 
             'PriorityColor', 
             'CategoryCaption', 
+            'ToDepartmentIdCaption', 
             'ToUserUsername', 
             'CreateUsername', 
             'UpdateUsername', 
