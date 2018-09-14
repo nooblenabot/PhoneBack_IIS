@@ -23,14 +23,14 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Is Active"), NotNull]
+        [DisplayName("Is Active"), NotNull, LookupInclude]
         public Boolean? IsActive
         {
             get { return Fields.IsActive[this]; }
             set { Fields.IsActive[this] = value; }
         }
 
-        [DisplayName("Is Archive"), NotNull]
+        [DisplayName("Is Archive"), NotNull,LookupInclude]
         public Boolean? IsArchive
         {
             get { return Fields.IsArchive[this]; }

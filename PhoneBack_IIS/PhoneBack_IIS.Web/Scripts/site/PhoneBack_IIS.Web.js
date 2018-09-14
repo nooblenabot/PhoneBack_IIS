@@ -4470,9 +4470,12 @@ var PhoneBack_IIS;
             TicketDialog.prototype.getNameProperty = function () { return PhoneBack.TicketRow.nameProperty; };
             TicketDialog.prototype.getService = function () { return PhoneBack.TicketService.baseUrl; };
             TicketDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                this.cloneButton.hide();
+                this.undeleteButton.hide();
+                //this.
                 if (PhoneBack_IIS.Authorization.hasPermission("Ticket:Read:Modify")) { }
                 else {
-                    _super.prototype.updateInterface.call(this);
                     Serenity.EditorUtils.setReadonly(this.element.find('.editor'), true);
                     this.element.find('sup').hide();
                     this.deleteButton.hide();

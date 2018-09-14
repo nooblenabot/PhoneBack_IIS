@@ -13,10 +13,14 @@ namespace PhoneBack_IIS.PhoneBack {
 
         protected form = new TicketForm(this.idPrefix);
 
-        protected updateInterface():void {
+        protected updateInterface(): void {
+            super.updateInterface();
+            this.cloneButton.hide();
+            this.undeleteButton.hide();
+            //this.
             if (Authorization.hasPermission("Ticket:Read:Modify")) { }
             else {
-                super.updateInterface();
+                
                 Serenity.EditorUtils.setReadonly(this.element.find('.editor'), true);
                 this.element.find('sup').hide();
                 this.deleteButton.hide();

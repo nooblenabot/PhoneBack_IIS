@@ -26,7 +26,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
         }
 
         [DisplayName("Identity Consumer"), ForeignKey("[dbo].[PERSON]", "Id"), LeftJoin("jIdentityConsumer"), TextualField("FullIdentityConsumer")]
-        [LookupEditor(typeof(PersonRow), MinimumResultsForSearch = 1, InplaceAdd = false, FilterField = "IsArchive", FilterValue = true)]
+        [LookupEditor(typeof(PersonRow), MinimumResultsForSearch = 1, InplaceAdd = false, FilterField = "IsArchive", FilterValue = false)]
         public Int64? IdentityConsumer
         {
             get { return Fields.IdentityConsumer[this]; }
@@ -99,7 +99,7 @@ namespace PhoneBack_IIS.PhoneBack.Entities
             set { Fields.Category[this] = value; }
         }
 
-        [DisplayName("Department"), NotNull, ForeignKey("[dbo].[SET_BUSSDIV]", "Id"), LeftJoin("jToDepartmentId"), TextualField("ToDepartmentIdCaption")]
+        [DisplayName("Department"), ForeignKey("[dbo].[SET_BUSSDIV]", "Id"), LeftJoin("jToDepartmentId"), TextualField("ToDepartmentIdCaption")]
         [LookupEditor(typeof(SetBussdivRow), MinimumResultsForSearch = -1, InplaceAdd = false, FilterField = "IsActive", FilterValue = 1)]
         public Int16? ToDepartmentId
         {
